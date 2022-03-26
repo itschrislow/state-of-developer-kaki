@@ -16,7 +16,7 @@ export default function SalaryBars() {
   const [toggleCompare, setToggleCompare] = useState(CompareTo.Percentage);
 
   return (
-    <div className="py-10">
+    <div id="salary" className="py-10">
       <div className="mb-4 flex items-end justify-between">
         <h2 className="title">Salary</h2>
       </div>

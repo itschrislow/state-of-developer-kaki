@@ -14,7 +14,7 @@ export default function YOEBar() {
   const [key, setKey] = useState(YoeKeys.Percentage);
 
   return (
-    <div className="py-10">
+    <div id="experience" className="py-10">
       <h2 className="mb-4 title">Years of Experience</h2>
       <p>Trend: Almost 60% of developers have {"<"}1 YOE and 2-5 YOE</p>
       <div className="my-4 h-96 text-gray-900 font-mono">
