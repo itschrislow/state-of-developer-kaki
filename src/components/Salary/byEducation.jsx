@@ -4,20 +4,13 @@ import { salaryData } from "../../data/salary";
 import theme from "../../lib/nivo";
 import Tooltip from "../Tooltip";
 
-export default function SalaryByYoe() {
+export default function SalaryByEducation() {
   return (
     <div className="h-[450px] font-medium">
       <ResponsiveBar
         data={salaryData.slice().reverse()}
         layout="horizontal"
-        keys={[
-          "<1 year",
-          "1-2 years",
-          "2-5 years",
-          "5-10 years",
-          "10-20 years",
-          ">20 years",
-        ]}
+        keys={["Yes, related field", "Yes, unrelated field", "No", "Blank"]}
         indexBy="salary"
         margin={{ top: 20, right: 10, bottom: 0, left: 90 }}
         padding={0.3}
@@ -42,8 +35,8 @@ export default function SalaryByYoe() {
             direction: "row",
             justify: false,
             translateY: -20,
-            itemsSpacing: 2,
-            itemWidth: 110,
+            itemsSpacing: 0,
+            itemWidth: 175,
             itemHeight: 20,
             itemDirection: "left-to-right",
             symbolSize: 20,
