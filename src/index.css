@@ -5,3 +5,11 @@
 .title {
   @apply mb-2 text-4xl font-semibold uppercase;
 }
+
+.button {
+  @apply px-4 py-2;
+}
+
+.active-button {
+  @apply bg-white bg-opacity-20;
+}
