@@ -3,13 +3,21 @@
 @tailwind utilities;
 
 .title {
-  @apply mb-2 text-4xl font-semibold uppercase;
+  @apply text-4xl font-semibold uppercase;
 }
 
 .button {
-  @apply px-4 py-2;
+  @apply px-4 py-2 hover:bg-white hover:bg-opacity-10;
 }
 
 .active-button {
   @apply bg-white bg-opacity-20;
+}
+
+.tabs {
+  @apply max-w-max flex divide-x border border-dashed;
+}
+
+.trend {
+  @apply mb-4 text-white;
 }
