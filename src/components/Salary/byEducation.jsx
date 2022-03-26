@@ -19,7 +19,7 @@ export default function SalaryByEducation() {
           indexBy="salary"
           margin={{ top: 20, right: 10, bottom: 0, left: 90 }}
           padding={0.3}
-          colors={{ scheme: "red_blue" }}
+          colors={["#f9a03f", "#e5366f", "#7d1290", "#331886"]}
           labelSkipWidth={14}
           labelSkipHeight={12}
           valueFormat={(value) => `${value}%`}

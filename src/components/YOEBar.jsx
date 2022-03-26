@@ -15,27 +15,9 @@ export default function YOEBar() {
 
   return (
     <div className="py-10">
-      <div className="mb-4 flex justify-between">
-        <h2 className="title">Years of Experience</h2>
-        <div className="tabs">
-          <button
-            onClick={() => setKey(YoeKeys.Percentage)}
-            className={`button ${
-              key === YoeKeys.Percentage ? "active-button" : ""
-            }`}
-          >
-            Percentage
-          </button>
-          <button
-            onClick={() => setKey(YoeKeys.Count)}
-            className={`button ${key === YoeKeys.Count ? "active-button" : ""}`}
-          >
-            Count
-          </button>
-        </div>
-      </div>
-      <p>Most developers have 2-5 years of experience</p>
-      <div className="mt-4 h-96 text-gray-900 font-mono">
+      <h2 className="mb-4 title">Years of Experience</h2>
+      <p>Trend: Almost 60% of developers have {"<"}1 YOE and 2-5 YOE</p>
+      <div className="my-4 h-96 text-gray-900 font-mono">
         <ResponsiveBar
           data={yoeData}
           keys={[key]}
@@ -51,8 +33,8 @@ export default function YOEBar() {
               id: "gradient",
               type: "linearGradient",
               colors: [
-                { offset: 0, color: "#f43f5e" },
-                { offset: 100, color: "#881337" },
+                { offset: 0, color: "#d02078" },
+                { offset: 100, color: "#f36b55" },
               ],
             },
           ]}
@@ -87,12 +69,26 @@ export default function YOEBar() {
               label={indexValue}
               value={`${value}${key === YoeKeys.Percentage ? "%" : ""}`}
             />
-            // <div style={{ color: "#000", background: "#fff", padding: 12 }}>
-            //   {indexValue}: {value}
-            //   {key === YoeKeys.Percentage ? "%" : ""}
-            // </div>
           )}
         />
+      </div>
+      <div className="w-full flex justify-center">
+        <div className="tabs">
+          <button
+            onClick={() => setKey(YoeKeys.Percentage)}
+            className={`button ${
+              key === YoeKeys.Percentage ? "active-button" : ""
+            }`}
+          >
+            Percentage
+          </button>
+          <button
+            onClick={() => setKey(YoeKeys.Count)}
+            className={`button ${key === YoeKeys.Count ? "active-button" : ""}`}
+          >
+            Count
+          </button>
+        </div>
       </div>
     </div>
   );

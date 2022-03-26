@@ -27,7 +27,14 @@ export default function SalaryByYoe() {
           indexBy="salary"
           margin={{ top: 20, right: 10, bottom: 0, left: 90 }}
           padding={0.3}
-          colors={{ scheme: "red_blue" }}
+          colors={[
+            "#f9a03f",
+            "#f76c51",
+            "#e5366f",
+            "#b90b85",
+            "#7d1290",
+            "#331886",
+          ]}
           labelSkipWidth={14}
           labelSkipHeight={12}
           valueFormat={(value) => `${value}%`}

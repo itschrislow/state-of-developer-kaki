@@ -2,6 +2,7 @@ import { ResponsiveBar } from "@nivo/bar";
 
 import { salaryData } from "../../data/salary";
 import theme from "../../lib/nivo";
+import Tooltip from "../Tooltip";
 
 export default function SalaryBar() {
   return (
@@ -22,8 +23,8 @@ export default function SalaryBar() {
               id: "gradient",
               type: "linearGradient",
               colors: [
-                { offset: 0, color: "#f43f5e" },
-                { offset: 100, color: "#881337" },
+                { offset: 0, color: "#d02078" },
+                { offset: 100, color: "#f36b55" },
               ],
             },
           ]}
@@ -39,9 +40,7 @@ export default function SalaryBar() {
             tickValues: [0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250],
           }}
           tooltip={({ indexValue, value }) => (
-            <div style={{ color: "#000", background: "#fff", padding: 12 }}>
-              {indexValue}: {value}
-            </div>
+            <Tooltip label={indexValue} value={value} />
           )}
         />
       </div>

@@ -1,4 +1,5 @@
 import { ResponsivePie } from "@nivo/pie";
+
 import { higherEducation, bootcamp } from "../data/education";
 import theme from "../lib/nivo";
 
@@ -19,7 +20,7 @@ export default function EducationPies() {
             innerRadius={0.4}
             padAngle={0.5}
             cornerRadius={3}
-            colors={{ scheme: "red_yellow_blue" }}
+            colors={["#e5366f", "#f4a14f", "#f36b55", "#7d1694"]}
             theme={theme}
             arcLabelsSkipAngle={15}
             valueFormat={(value) => `${value}%`}
@@ -38,7 +39,7 @@ export default function EducationPies() {
             innerRadius={0.4}
             padAngle={0.5}
             cornerRadius={3}
-            colors={{ scheme: "red_yellow_blue" }}
+            colors={["#e5366f", "#f4a14f"]}
             theme={theme}
             valueFormat={(value) => `${value}%`}
           />

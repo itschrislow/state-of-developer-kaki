@@ -31,13 +31,15 @@ export default function SalaryBars() {
           {Object.keys(CompareTo).map((key) => {
             return (
               <button
+                key={key}
                 onClick={() => setToggleCompare(CompareTo[key])}
                 className={`
                     button
                     ${toggleCompare === CompareTo[key] && "active-button"}
                   `}
               >
-                by {CompareTo[key]}
+                {toggleCompare !== CompareTo.Percentage ? "by" : ""}{" "}
+                {CompareTo[key]}
               </button>
             );
           })}
