@@ -24,14 +24,14 @@ export default function SalaryBars() {
         {toggleCompare === CompareTo.Education && <SalaryByEducation />}
         {toggleCompare === CompareTo.Gender && <SalaryByGender />}
       </div>
-      <div className="grid grid-rows-2 sm:grid-rows-1 grid-cols-2 sm:grid-cols-4 border border-dashed divide-x divide-y divide-dashed text-sm sm:text-base">
+      <div className="grid grid-rows-2 sm:grid-rows-1 grid-cols-2 sm:grid-cols-4 text-sm">
         {Object.keys(CompareTo).map((key) => {
           return (
             <button
               key={key}
               onClick={() => setToggleCompare(CompareTo[key])}
               className={`
-                button
+                button border border-dashed
                 ${toggleCompare === CompareTo[key] && "active-button"}
               `}
             >

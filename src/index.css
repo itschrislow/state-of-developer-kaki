@@ -6,6 +6,10 @@
   @apply mb-4 text-3xl lg:text-4xl font-semibold uppercase;
 }
 
+.subtitle {
+  @apply mb-2 text-xl lg:text-2xl font-semibold;
+}
+
 .chart {
   @apply py-6 md:py-8 lg:py-10;
 }

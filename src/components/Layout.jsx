@@ -85,7 +85,7 @@ export default function Layout({ children }) {
         )}
       </div>
       {/* CONTENT */}
-      <div className="h-screen py-[57px] lg:pt-[65px] flex">
+      <div className="h-screen py-[57px] lg:pb-0 lg:pt-[65px] flex">
         <div className="hidden lg:block lg:w-1/5 px-10 py-2 text-sm">
           <Nav tableOfContents={tableOfContents} />
         </div>
