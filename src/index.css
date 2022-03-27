@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 .title {
-  @apply text-4xl font-semibold uppercase;
+  @apply mb-4 text-3xl lg:text-4xl font-semibold uppercase;
+}
+
+.chart {
+  @apply py-6 md:py-8 lg:py-10;
 }
 
 .button {

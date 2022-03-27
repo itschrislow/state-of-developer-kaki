@@ -5,8 +5,8 @@ import theme from "../lib/nivo";
 
 export default function EducationPies() {
   return (
-    <div id="education" className="py-10">
-      <h2 className="mb-4 title">Education</h2>
+    <div id="education" className="chart">
+      <h2 className="title">Education</h2>
       <div className="flex flex-col sm:flex-row-reverse items-center text-gray-900">
         <p className="mb-4 w-full sm:w-1/2 text-gray-100">
           Trend: {">"}80% of developers have a bachelor's degree or higher in a

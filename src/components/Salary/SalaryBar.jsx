@@ -15,7 +15,7 @@ export default function SalaryBar() {
           data={salaryData}
           keys={["count"]}
           indexBy="salary"
-          margin={{ top: 20, right: 30, bottom: 30, left: 60 }}
+          margin={{ top: 40, right: 30, bottom: 30, left: 60 }}
           padding={0.3}
           theme={theme}
           defs={[
