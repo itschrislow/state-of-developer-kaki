@@ -6,6 +6,7 @@ import cross from "../icons/cross.svg";
 import hamburger from "../icons/hamburger.svg";
 import chevronDoubleLeft from "../icons/chevronDoubleLeft.svg";
 import chevronDoubleRight from "../icons/chevronDoubleRight.svg";
+import SocialMedia from "./SocialMedia";
 
 const routes = ["/", "/findings", "/about"];
 const routeNames = ["00 Introduction", "01 Findings", "02 About"];
@@ -87,7 +88,10 @@ export default function Layout({ children }) {
       {/* CONTENT */}
       <div className="h-screen py-[57px] lg:pb-0 lg:pt-[65px] flex">
         <div className="hidden lg:block lg:w-1/5 px-10 py-2 text-sm">
-          <Nav tableOfContents={tableOfContents} />
+          <div className="h-full flex flex-col justify-between">
+            <Nav tableOfContents={tableOfContents} />
+            <SocialMedia className="py-4" />
+          </div>
         </div>
         <div className="w-full lg:w-4/5 overflow-y-scroll px-5 md:px-8 lg:pr-10">
           {children}
@@ -126,7 +130,7 @@ export default function Layout({ children }) {
 }
 
 const Nav = ({ tableOfContents }) => (
-  <>
+  <div>
     <NavLink to={Paths.Introduction}>
       {({ isActive }) => (
         <p className={`py-2 font-semibold ${isActive ? "text-gradient" : ""}`}>
@@ -161,45 +165,54 @@ const Nav = ({ tableOfContents }) => (
         </p>
       )}
     </NavLink>
-  </>
+  </div>
 );
 
 const MobileNav = ({ tableOfContents, closeMobileMenu }) => (
-  <div className="z-20 absolute top-[57px] w-full px-6 py-2 bg-black border-b border-dashed">
-    <NavLink to={Paths.Introduction} onClick={closeMobileMenu}>
-      {({ isActive }) => (
-        <p className={`py-2 font-semibold ${isActive ? "text-gradient" : ""}`}>
-          00 Introduction
-        </p>
-      )}
-    </NavLink>
-    <NavLink to={Paths.Findings} onClick={closeMobileMenu}>
-      {({ isActive }) => (
-        <p className={`py-2 font-semibold ${isActive ? "text-gradient" : ""}`}>
-          01 Findings
-        </p>
-      )}
-    </NavLink>
-    {tableOfContents.map((item, index) => (
-      <button
-        key={index}
-        onClick={() => {
-          document
-            .getElementById(item.toLowerCase())
-            .scrollIntoView({ behavior: "smooth" });
-          closeMobileMenu();
-        }}
-        className="block pl-7 py-2 font-semibold"
-      >
-        {">"} {item}
-      </button>
-    ))}
-    <NavLink to={Paths.About} onClick={closeMobileMenu}>
-      {({ isActive }) => (
-        <p className={`py-2 font-semibold ${isActive ? "text-gradient" : ""}`}>
-          02 About
-        </p>
-      )}
-    </NavLink>
+  <div className="z-20 absolute inset-y-[57px] w-full px-6 py-2 flex flex-col justify-between bg-black border-b border-dashed">
+    <div>
+      <NavLink to={Paths.Introduction} onClick={closeMobileMenu}>
+        {({ isActive }) => (
+          <p
+            className={`py-2 font-semibold ${isActive ? "text-gradient" : ""}`}
+          >
+            00 Introduction
+          </p>
+        )}
+      </NavLink>
+      <NavLink to={Paths.Findings} onClick={closeMobileMenu}>
+        {({ isActive }) => (
+          <p
+            className={`py-2 font-semibold ${isActive ? "text-gradient" : ""}`}
+          >
+            01 Findings
+          </p>
+        )}
+      </NavLink>
+      {tableOfContents.map((item, index) => (
+        <button
+          key={index}
+          onClick={() => {
+            document
+              .getElementById(item.toLowerCase())
+              .scrollIntoView({ behavior: "smooth" });
+            closeMobileMenu();
+          }}
+          className="block pl-7 py-2 font-semibold"
+        >
+          {">"} {item}
+        </button>
+      ))}
+      <NavLink to={Paths.About} onClick={closeMobileMenu}>
+        {({ isActive }) => (
+          <p
+            className={`py-2 font-semibold ${isActive ? "text-gradient" : ""}`}
+          >
+            02 About
+          </p>
+        )}
+      </NavLink>
+    </div>
+    <SocialMedia className="py-2" />
   </div>
 );
