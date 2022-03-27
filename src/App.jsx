@@ -1,3 +1,5 @@
+import profileImage from "./icons/profile.jpg";
+
 export default function App() {
   return (
     <div className="chart">
@@ -55,7 +57,24 @@ export default function App() {
       <br />
       <p>Let's discover the state of DeveloperKaki in 2021!</p>
       <br />
-      <p>- Chris Low</p>
+      <div className="flex gap-4">
+        <div className="h-[60px] w-[60px] p-1 rounded-full border border-dashed">
+          <img src={profileImage} alt="Chris Low" className="rounded-full" />
+        </div>
+        <div className="text-sm">
+          <p className="font-semibold">Chris Low</p>
+          <span className="text-gradient">
+            <a
+              href="https://github.com/itschrislow"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @itschrislow
+            </a>
+          </span>
+          <p>Frontend Engineer</p>
+        </div>
+      </div>
     </div>
   );
 }
