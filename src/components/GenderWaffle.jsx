@@ -24,7 +24,7 @@ export default function GenderWaffle() {
               direction: "row",
               justify: false,
               translateY: 10,
-              itemWidth: 100,
+              itemWidth: 90,
               itemHeight: 20,
               symbolSize: 20,
               symbolShape: "circle",
@@ -54,7 +54,7 @@ const CustomCell = ({
 }) => (
   <circle
     r={size / 4}
-    cx={x + size / 4}
+    cx={x + size / 2}
     cy={y + size / 4}
     fill={fill || color}
     strokeWidth={borderWidth}

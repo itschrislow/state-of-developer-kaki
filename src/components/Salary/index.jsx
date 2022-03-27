@@ -24,24 +24,22 @@ export default function SalaryBars() {
         {toggleCompare === CompareTo.Education && <SalaryByEducation />}
         {toggleCompare === CompareTo.Gender && <SalaryByGender />}
       </div>
-      <div className="flex justify-center">
-        <div className="tabs">
-          {Object.keys(CompareTo).map((key) => {
-            return (
-              <button
-                key={key}
-                onClick={() => setToggleCompare(CompareTo[key])}
-                className={`
-                    button
-                    ${toggleCompare === CompareTo[key] && "active-button"}
-                  `}
-              >
-                {toggleCompare !== CompareTo.Percentage ? "by" : ""}{" "}
-                {CompareTo[key]}
-              </button>
-            );
-          })}
-        </div>
+      <div className="grid grid-rows-2 sm:grid-rows-1 grid-cols-2 sm:grid-cols-4 border border-dashed divide-x divide-y divide-dashed text-sm sm:text-base">
+        {Object.keys(CompareTo).map((key) => {
+          return (
+            <button
+              key={key}
+              onClick={() => setToggleCompare(CompareTo[key])}
+              className={`
+                button
+                ${toggleCompare === CompareTo[key] && "active-button"}
+              `}
+            >
+              {CompareTo[key] !== CompareTo.Percentage ? "by" : ""}{" "}
+              {CompareTo[key]}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

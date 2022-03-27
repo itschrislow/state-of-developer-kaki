@@ -90,7 +90,7 @@ export default function Layout({ children }) {
           <Nav tableOfContents={tableOfContents} />
         </div>
         <div className="w-full lg:w-4/5 overflow-y-scroll px-5 md:px-8 lg:pr-10">
-          <div className="">{children}</div>
+          {children}
         </div>
       </div>
       {/* FOOTER */}
