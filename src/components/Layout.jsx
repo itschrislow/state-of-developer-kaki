@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 
 import { Paths } from "../lib/paths";
 import cross from "../icons/cross.svg";
@@ -20,7 +20,7 @@ const tableOfContents = [
   "Satisfaction",
 ];
 
-export default function Layout({ children }) {
+export default function Layout() {
   const { pathname } = useLocation();
 
   // MOBILE NAV
@@ -94,7 +94,7 @@ export default function Layout({ children }) {
           </div>
         </div>
         <div className="w-full lg:w-4/5 overflow-y-scroll px-5 md:px-8 lg:pr-10">
-          {children}
+          <Outlet />
         </div>
       </div>
       {/* FOOTER */}
@@ -196,11 +196,9 @@ const MobileNav = ({ tableOfContents, closeMobileMenu }) => (
           state={{
             id: item.toLowerCase(),
           }}
+          onClick={closeMobileMenu}
         >
-          <p
-            onClick={closeMobileMenu}
-            className="block pl-7 py-2 font-semibold"
-          >
+          <p className="block pl-7 py-2 font-semibold">
             {">"} {item}
           </p>
         </NavLink>

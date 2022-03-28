@@ -8,19 +8,19 @@ import { Paths } from "./lib/paths.js";
 import Layout from "./components/Layout";
 import About from "./routes/About";
 import Findings from "./routes/Findings";
+import Custom404 from "./routes/Custom404";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path={Paths.Introduction} element={<App />} />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<App />} />
           <Route path={Paths.Findings} element={<Findings />} />
           <Route path={Paths.About} element={<About />} />
-          {/* 404 */}
-          <Route path="*" element={<p>404 Error not found</p>} />
-        </Routes>
-      </Layout>
+        </Route>
+        <Route path="*" element={<Custom404 />} />
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
