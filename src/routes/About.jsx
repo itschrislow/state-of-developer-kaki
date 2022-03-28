@@ -44,8 +44,8 @@ export default function About() {
         <li>React</li>
         <li>JavaScript</li>
         <li>Tailwind CSS</li>
-        <li>Netlify</li>
         <li>Nivo</li>
+        <li>Vercel</li>
       </ul>
       <br />
       <p>Inspirations:</p>
