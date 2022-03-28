@@ -146,17 +146,17 @@ const Nav = ({ tableOfContents }) => (
       )}
     </NavLink>
     {tableOfContents.map((item, index) => (
-      <button
+      <NavLink
         key={index}
-        onClick={() =>
-          document
-            .getElementById(item.toLowerCase())
-            .scrollIntoView({ behavior: "smooth" })
-        }
-        className="block pl-7 py-2 font-semibold"
+        to={Paths.Findings}
+        state={{
+          id: item.toLowerCase(),
+        }}
       >
-        {">"} {item}
-      </button>
+        <p className="block pl-7 py-2 font-semibold">
+          {">"} {item}
+        </p>
+      </NavLink>
     ))}
     <NavLink to={Paths.About}>
       {({ isActive }) => (
@@ -190,18 +190,20 @@ const MobileNav = ({ tableOfContents, closeMobileMenu }) => (
         )}
       </NavLink>
       {tableOfContents.map((item, index) => (
-        <button
+        <NavLink
           key={index}
-          onClick={() => {
-            document
-              .getElementById(item.toLowerCase())
-              .scrollIntoView({ behavior: "smooth" });
-            closeMobileMenu();
+          to={Paths.Findings}
+          state={{
+            id: item.toLowerCase(),
           }}
-          className="block pl-7 py-2 font-semibold"
         >
-          {">"} {item}
-        </button>
+          <p
+            onClick={closeMobileMenu}
+            className="block pl-7 py-2 font-semibold"
+          >
+            {">"} {item}
+          </p>
+        </NavLink>
       ))}
       <NavLink to={Paths.About} onClick={closeMobileMenu}>
         {({ isActive }) => (
