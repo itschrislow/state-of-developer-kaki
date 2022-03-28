@@ -1,7 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+
 import { Paths } from "../lib/paths";
+import { handlePageview } from "../lib/ga4";
 
 export default function Custom404() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    handlePageview("/404");
+  }, [pathname]);
+
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center bg-black text-white font-mono">
       <h1 className="text-5xl text-gradient">404</h1>

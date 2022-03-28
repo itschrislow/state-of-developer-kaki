@@ -1,26 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ReactGA from "react-ga4";
+import { BrowserRouter } from "react-router-dom";
+
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Paths } from "./lib/paths.js";
-import Layout from "./components/Layout";
-import About from "./routes/About";
-import Findings from "./routes/Findings";
-import Custom404 from "./routes/Custom404";
+
+ReactGA.initialize(process.env.REACT_APP_GA_ID);
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<App />} />
-          <Route path={Paths.Findings} element={<Findings />} />
-          <Route path={Paths.About} element={<About />} />
-        </Route>
-        <Route path="*" element={<Custom404 />} />
-      </Routes>
+      <App />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

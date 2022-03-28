@@ -7,6 +7,7 @@ import hamburger from "../icons/hamburger.svg";
 import chevronDoubleLeft from "../icons/chevronDoubleLeft.svg";
 import chevronDoubleRight from "../icons/chevronDoubleRight.svg";
 import SocialMedia from "./SocialMedia";
+import { handlePageview } from "../lib/ga4";
 
 const routes = ["/", "/findings", "/about"];
 const routeNames = ["00 Introduction", "01 Findings", "02 About"];
@@ -51,6 +52,8 @@ export default function Layout() {
     setPrevPageIndex(getPreviousPage(pathname));
     setNextPageIndex(getNextPage(pathname));
     setCurrPathIndex(getCurrPathIndex(pathname));
+
+    handlePageview(pathname);
   }, [pathname]);
 
   return (
