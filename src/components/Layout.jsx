@@ -101,7 +101,7 @@ export default function Layout() {
         </div>
       </div>
       {/* FOOTER */}
-      <div className="flex lg:hidden fixed bottom-0 h-[57px] w-full divide-x divide-dashed border-t border-dashed bg-black">
+      <div className="z-50 flex lg:hidden fixed bottom-0 h-[57px] w-full divide-x divide-dashed border-t border-dashed bg-black">
         {prevPageIndex !== undefined && prevPageIndex !== -1 && (
           <Link to={routes[prevPageIndex]}>
             <div className="w-14 p-3 flex items-center justify-center">
