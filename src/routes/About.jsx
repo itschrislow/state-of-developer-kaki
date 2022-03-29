@@ -24,10 +24,10 @@ export default function About() {
             public CSV file
           </a>
         </span>{" "}
-        on Google Sheets. I cleaned the dataset to include only responses
-        submitted in 2021 where the participant's current country of residence
-        is Malaysia and converted all salaries to Malaysian Ringgit (MYR) using
-        the average exchange rate for the specific currency in 2021.
+        on Google Sheets. I cleaned the dataset programmatically to include only
+        responses submitted in 2021 where the participant's current country of
+        residence is Malaysia and converted all salaries to Malaysian Ringgit
+        (MYR) using the average exchange rate for the specific currency in 2021.
       </p>
       <h3 className="mt-4 subtitle">Results</h3>
       <p>

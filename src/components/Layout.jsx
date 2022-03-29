@@ -57,7 +57,7 @@ export default function Layout() {
   }, [pathname]);
 
   return (
-    <div className="max-h-screen bg-black text-gray-100 font-mono">
+    <div className="h-full bg-black text-gray-100 font-mono">
       {/* HEADER */}
       <div className="hidden lg:block z-50 absolute top-0 w-full p-4 bg-black border-b border-dashed">
         <h1 className="text-2xl text-center font-bold">

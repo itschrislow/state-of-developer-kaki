@@ -16,7 +16,7 @@ export default function GenderWaffle() {
           columns={10}
           padding={-20}
           margin={{ top: 0, right: 0, bottom: 10, left: 0 }}
-          colors={["#d02078", "#f4a14f", "#f6e36c"]}
+          colors={["#d02078", "#f76c51", "#f6e36c"]}
           theme={theme}
           legends={[
             {

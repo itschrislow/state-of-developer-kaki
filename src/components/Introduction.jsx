@@ -64,11 +64,7 @@ export default function Introduction() {
         <div className="text-sm">
           <p className="font-semibold">Chris Low</p>
           <span className="text-gradient">
-            <a
-              href="https://github.com/itschrislow"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://itschrislow.com" target="_blank" rel="noreferrer">
               @itschrislow
             </a>
           </span>
