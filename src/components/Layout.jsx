@@ -113,7 +113,7 @@ export default function Layout() {
             </div>
           </Link>
         )}
-        <p className="z-50 w-full flex items-center justify-center text-lg text-gradient font-semibold">
+        <p className="z-50 w-full flex items-center justify-center text-lg text-white font-semibold">
           {routeNames[currPathIndex]}
         </p>
         {nextPageIndex !== undefined && nextPageIndex !== -1 && (
