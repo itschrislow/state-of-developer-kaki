@@ -9,9 +9,9 @@ export default function About() {
       <h3 className="mt-4 subtitle">Survey</h3>
       <p>
         The survey is designed by{" "}
-        <span className="text-gradient">
-          <a href="https://www.linkedin.com/in/daren-tan">Daren Tan</a>
-        </span>
+        <a href="https://www.linkedin.com/in/daren-tan">
+          <span className="text-gradient">Daren Tan</span>
+        </a>
         , myself and a group of volunteers from DeveloperKaki, created with
         Google Form and distributed in the public DeveloperKaki Facebook group
         with over 10,000 members.
@@ -19,11 +19,9 @@ export default function About() {
       <h3 className="mt-4 subtitle">Dataset</h3>
       <p>
         The raw dataset is a{" "}
-        <span className="text-gradient">
-          <a href="https://docs.google.com/spreadsheets/d/11OrbJjxKWXm9qZUmLi0zuWvOAhW4CSflWZYb5EVgve4/edit?fbclid=IwAR3RUpPIRAxUKmN939EsqYmJ8jqrobmJTiTOqUBzpm3_5EhbcSQdbkTh1x0#gid=1132462481">
-            public CSV file
-          </a>
-        </span>{" "}
+        <a href="https://docs.google.com/spreadsheets/d/11OrbJjxKWXm9qZUmLi0zuWvOAhW4CSflWZYb5EVgve4/edit?fbclid=IwAR3RUpPIRAxUKmN939EsqYmJ8jqrobmJTiTOqUBzpm3_5EhbcSQdbkTh1x0#gid=1132462481">
+          <span className="text-gradient">public CSV file</span>
+        </a>{" "}
         on Google Sheets. I cleaned the dataset programmatically to include only
         responses submitted in 2021 where the participant's current country of
         residence is Malaysia and converted all salaries to Malaysian Ringgit
@@ -32,9 +30,9 @@ export default function About() {
       <h3 className="mt-4 subtitle">Results</h3>
       <p>
         This website is designed and built by me,{" "}
-        <span className="text-gradient">
-          <a href="https://itschrislow.com/">Chris Low</a>
-        </span>
+        <a href="https://itschrislow.com/">
+          <span className="text-gradient">Chris Low</span>
+        </a>
         .
       </p>
 
@@ -51,14 +49,14 @@ export default function About() {
       <p>Inspirations:</p>
       <ul className="list-disc list-inside">
         <li>
-          <span className="text-gradient">
-            <a href="https://itschrislow.com/">State of CSS</a>
-          </span>
+          <a href="https://itschrislow.com/">
+            <span className="text-gradient">State of CSS</span>
+          </a>
         </li>
         <li>
-          <span className="text-gradient">
-            <a href="https://itschrislow.com/">State of JavaScript</a>
-          </span>
+          <a href="https://itschrislow.com/">
+            <span className="text-gradient">State of JavaScript</span>
+          </a>
         </li>
       </ul>
     </div>

@@ -11,46 +11,38 @@ export default function Introduction() {
       <br />
       <p>
         With the recent{" "}
-        <span className="text-gradient">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.theedgemarkets.com/article/new-minimum-wage-rm1500-month-may-1-%E2%80%94-pm"
-          >
-            news
-          </a>
-        </span>{" "}
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.theedgemarkets.com/article/new-minimum-wage-rm1500-month-may-1-%E2%80%94-pm"
+        >
+          <span className="text-gradient">news</span>
+        </a>{" "}
         of Malaysian increasing the minimum wage to MYR 1500/month, the{" "}
-        <span className="text-gradient">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.instagram.com/malaysianpaygap/"
-          >
-            @malaysianpaygap
-          </a>
-        </span>{" "}
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.instagram.com/malaysianpaygap/"
+        >
+          <span className="text-gradient">@malaysianpaygap</span>{" "}
+        </a>{" "}
         Instagram account and the ongoing debates in{" "}
-        <span className="text-gradient">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.facebook.com/groups/developerkaki/"
-          >
-            DeveloperKaki
-          </a>
-        </span>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.facebook.com/groups/developerkaki/"
+        >
+          <span className="text-gradient">DeveloperKaki</span>
+        </a>
         , Malaysia's largest online developer community, I was inspired to use
         the data from the{" "}
-        <span className="text-gradient">
-          <a
-            href="https://www.facebook.com/groups/developerkaki/permalink/1475965772749331/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Developer Salary Survey
-          </a>
-        </span>{" "}
+        <a
+          href="https://www.facebook.com/groups/developerkaki/permalink/1475965772749331/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span className="text-gradient">Developer Salary Survey</span>{" "}
+        </a>
         in 2021 to share some insights on the relationship between salary,
         demographics, geography, education and experience.
       </p>
@@ -63,11 +55,9 @@ export default function Introduction() {
         </div>
         <div className="text-sm">
           <p className="font-semibold">Chris Low</p>
-          <span className="text-gradient">
-            <a href="https://itschrislow.com" target="_blank" rel="noreferrer">
-              @itschrislow
-            </a>
-          </span>
+          <a href="https://itschrislow.com" target="_blank" rel="noreferrer">
+            <span className="text-gradient">@itschrislow</span>
+          </a>
           <p>Frontend Engineer</p>
         </div>
       </div>
