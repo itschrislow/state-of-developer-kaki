@@ -66,7 +66,7 @@ export default function Layout() {
       </div>
       {/* MOBILE HEADER */}
       <div className="block lg:hidden h-full">
-        <div className="z-50 fixed top-0 w-full flex items-center border-b border-dashed">
+        <div className="z-50 fixed top-0 w-full flex items-center border-b border-dashed bg-black">
           <button
             className="p-3 border-r border-dashed"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -101,7 +101,7 @@ export default function Layout() {
         </div>
       </div>
       {/* FOOTER */}
-      <div className="z-50 flex lg:hidden fixed bottom-0 h-[57px] w-full divide-x divide-dashed border-t border-dashed bg-black">
+      <div className="z-40 flex lg:hidden fixed bottom-0 h-[57px] w-full divide-x divide-dashed border-t border-dashed bg-black">
         {prevPageIndex !== undefined && prevPageIndex !== -1 && (
           <Link to={routes[prevPageIndex]}>
             <div className="w-14 p-3 flex items-center justify-center">
@@ -113,7 +113,7 @@ export default function Layout() {
             </div>
           </Link>
         )}
-        <p className="w-full flex items-center justify-center text-lg text-gradient font-semibold">
+        <p className="z-50 w-full flex items-center justify-center text-lg text-gradient font-semibold">
           {routeNames[currPathIndex]}
         </p>
         {nextPageIndex !== undefined && nextPageIndex !== -1 && (
