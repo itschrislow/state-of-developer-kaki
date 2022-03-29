@@ -5,6 +5,7 @@ import GenderWaffle from "../components/GenderWaffle";
 import YOEBar from "../components/YOEBar";
 import EducationPies from "../components/EducationPies";
 import SalaryBars from "../components/Salary";
+import LocationChoropleth from "../components/LocationChoropleth";
 
 export default function Findings() {
   const { state } = useLocation();
@@ -16,6 +17,7 @@ export default function Findings() {
 
   return (
     <div>
+      <LocationChoropleth />
       <GenderWaffle />
       <YOEBar />
       <EducationPies />
