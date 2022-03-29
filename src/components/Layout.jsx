@@ -66,7 +66,7 @@ export default function Layout() {
       </div>
       {/* MOBILE HEADER */}
       <div className="block lg:hidden h-full">
-        <div className="z-50 absolute top-0 w-full flex items-center border-b border-dashed">
+        <div className="z-50 fixed top-0 w-full flex items-center border-b border-dashed">
           <button
             className="p-3 border-r border-dashed"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
