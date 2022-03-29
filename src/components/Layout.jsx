@@ -114,7 +114,7 @@ export default function Layout() {
           </Link>
         )}
         <p className="z-50 w-full flex items-center justify-center text-lg text-white font-semibold">
-          {routeNames[currPathIndex]}
+          <span className="text-gradient">{routeNames[currPathIndex]}</span>
         </p>
         {nextPageIndex !== undefined && nextPageIndex !== -1 && (
           <Link to={routes[nextPageIndex]}>
