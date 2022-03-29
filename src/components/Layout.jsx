@@ -65,8 +65,8 @@ export default function Layout() {
         </h1>
       </div>
       {/* MOBILE HEADER */}
-      <div className="block lg:hidden">
-        <div className="z-50 absolute top-0 w-full flex items-center bg-black border-b border-dashed">
+      <div className="block lg:hidden h-full">
+        <div className="z-50 absolute top-0 w-full flex items-center border-b border-dashed">
           <button
             className="p-3 border-r border-dashed"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -172,7 +172,7 @@ const Nav = ({ tableOfContents }) => (
 );
 
 const MobileNav = ({ tableOfContents, closeMobileMenu }) => (
-  <div className="z-20 absolute inset-y-[57px] w-full px-6 py-2 flex flex-col justify-between bg-black border-b border-dashed">
+  <div className="z-20 fixed inset-y-[57px] w-full px-6 py-2 flex flex-col justify-between bg-black border-b border-dashed">
     <div>
       <NavLink to={Paths.Introduction} onClick={closeMobileMenu}>
         {({ isActive }) => (
