@@ -41,8 +41,8 @@ export default function Introduction() {
           target="_blank"
           rel="noreferrer"
         >
-          <span className="text-gradient">Developer Salary Survey</span>{" "}
-        </a>
+          <span className="text-gradient">Developer Salary Survey</span>
+        </a>{" "}
         in 2021 to share some insights on the relationship between salary,
         demographics, geography, education and experience.
       </p>
