@@ -1,4 +1,5 @@
 import profileImage from "../icons/profile.jpg";
+import { handleGA4Event } from "../lib/ga4";
 
 export default function Introduction() {
   return (
@@ -55,7 +56,18 @@ export default function Introduction() {
         </div>
         <div className="text-sm">
           <p className="font-semibold">Chris Low</p>
-          <a href="https://itschrislow.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://itschrislow.com"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() =>
+              handleGA4Event({
+                category: "Social Media",
+                action: "Portfolio (Introduction)",
+                label: "Portfolio (Introduction)",
+              })
+            }
+          >
             <span className="text-gradient">@itschrislow</span>
           </a>
           <p>Frontend Engineer</p>

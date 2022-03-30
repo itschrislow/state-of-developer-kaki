@@ -1,3 +1,5 @@
+import { handleGA4Event } from "../lib/ga4";
+
 export default function About() {
   return (
     <div className="chart top">
@@ -30,7 +32,16 @@ export default function About() {
       <h3 className="mt-4 subtitle">Results</h3>
       <p>
         This website is designed and built by me,{" "}
-        <a href="https://itschrislow.com/">
+        <a
+          href="https://itschrislow.com/"
+          onClick={() =>
+            handleGA4Event({
+              category: "Social Media",
+              action: "Portfolio (About)",
+              label: "Portfolio (About)",
+            })
+          }
+        >
           <span className="text-gradient">Chris Low</span>
         </a>
         .
@@ -49,12 +60,12 @@ export default function About() {
       <p>Inspirations:</p>
       <ul className="list-disc list-inside">
         <li>
-          <a href="https://itschrislow.com/">
+          <a href="https://2021.stateofcss.com/en-US/">
             <span className="text-gradient">State of CSS</span>
           </a>
         </li>
         <li>
-          <a href="https://itschrislow.com/">
+          <a href="https://2021.stateofjs.com/en-US/">
             <span className="text-gradient">State of JavaScript</span>
           </a>
         </li>
