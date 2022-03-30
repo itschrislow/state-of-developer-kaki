@@ -23,7 +23,7 @@
 }
 
 .tabs {
-  @apply max-w-max flex divide-x border border-dashed;
+  @apply max-w-max flex divide-x divide-dashed border border-dashed text-sm;
 }
 
 .trend {
