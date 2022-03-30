@@ -65,8 +65,8 @@ export default function Layout() {
         </h1>
       </div>
       {/* MOBILE HEADER */}
-      <div className="block lg:hidden">
-        <div className="z-50 absolute top-0 w-full flex items-center bg-black border-b border-dashed">
+      <div className="block lg:hidden h-full">
+        <div className="z-50 fixed top-0 w-full flex items-center border-b border-dashed bg-black">
           <button
             className="p-3 border-r border-dashed"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -101,7 +101,7 @@ export default function Layout() {
         </div>
       </div>
       {/* FOOTER */}
-      <div className="flex lg:hidden absolute bottom-0 h-[57px] w-full divide-x divide-dashed border-t border-dashed bg-black">
+      <div className="z-40 flex lg:hidden fixed bottom-0 h-[57px] w-full divide-x divide-dashed border-t border-dashed bg-black">
         {prevPageIndex !== undefined && prevPageIndex !== -1 && (
           <Link to={routes[prevPageIndex]}>
             <div className="w-14 p-3 flex items-center justify-center">
@@ -113,8 +113,8 @@ export default function Layout() {
             </div>
           </Link>
         )}
-        <p className="w-full flex items-center justify-center text-lg text-gradient font-semibold">
-          {routeNames[currPathIndex]}
+        <p className="z-50 w-full flex items-center justify-center text-lg text-white font-semibold">
+          <span className="text-gradient">{routeNames[currPathIndex]}</span>
         </p>
         {nextPageIndex !== undefined && nextPageIndex !== -1 && (
           <Link to={routes[nextPageIndex]}>
@@ -172,7 +172,7 @@ const Nav = ({ tableOfContents }) => (
 );
 
 const MobileNav = ({ tableOfContents, closeMobileMenu }) => (
-  <div className="z-20 absolute inset-y-[57px] w-full px-6 py-2 flex flex-col justify-between bg-black border-b border-dashed">
+  <div className="z-20 fixed inset-y-[57px] w-full px-6 py-2 flex flex-col justify-between bg-black border-b border-dashed">
     <div>
       <NavLink to={Paths.Introduction} onClick={closeMobileMenu}>
         {({ isActive }) => (
