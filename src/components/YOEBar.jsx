@@ -16,7 +16,10 @@ export default function YOEBar() {
   return (
     <div id="experience" className="chart">
       <h2 className="title">Years of Experience</h2>
-      <p>Trend: Almost 60% of developers have {"<"}1 YOE and 2-5 YOE</p>
+      <p>
+        Trend: Almost 60% of developers have either {"<"}1 YOE or between 2-5
+        YOE
+      </p>
       <div className="overflow-x-auto">
         <div className="my-4 h-96 min-w-[600px] text-gray-900 font-mono">
           <ResponsiveBar
