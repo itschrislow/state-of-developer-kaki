@@ -36,7 +36,10 @@ export default function LocationChoropleth() {
             ]}
             domain={[0, 5]}
             label="properties.name"
-            valueFormat={(value) => `${value * 20}%`}
+            valueFormat={(value) => {
+              if (value !== 5) return `${Number(value).toFixed(1)}%`;
+              else return `${value * 20}%`;
+            }}
             borderWidth={0.5}
             borderColor="#152538"
             theme={theme}
