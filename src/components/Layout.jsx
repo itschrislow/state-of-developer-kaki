@@ -54,6 +54,10 @@ export default function Layout() {
     setCurrPathIndex(getCurrPathIndex(pathname));
 
     handlePageview(pathname);
+
+    document
+      .getElementsByClassName("top")[0]
+      .scrollIntoView({ behavior: "smooth" });
   }, [pathname]);
 
   return (

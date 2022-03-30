@@ -2,7 +2,7 @@ import profileImage from "../icons/profile.jpg";
 
 export default function Introduction() {
   return (
-    <div className="chart">
+    <div className="chart top">
       <h2 className="title">Introduction</h2>
       <p>
         Balancing the scales of being underpaid or overpaid requires huge

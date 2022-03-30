@@ -17,7 +17,7 @@ export default function Findings() {
   }, [state]);
 
   return (
-    <div>
+    <div className="top">
       <LocationChoropleth />
       <GenderWaffle />
       <YOEBar />
