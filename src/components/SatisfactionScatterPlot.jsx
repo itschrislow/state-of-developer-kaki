@@ -20,7 +20,7 @@ export default function SatisfactionScatterPlot() {
   }, [key]);
 
   return (
-    <div id="experience" className="chart">
+    <div id="satisfaction" className="chart">
       <h2 className="title">Satisfaction</h2>
       <p>
         Trend: The satisfaction level of developers increases as monthly base
