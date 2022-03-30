@@ -35,7 +35,7 @@ export default function SatisfactionScatterPlot() {
       <p>
         Note 2: Based on the non-aggregated dataset, the correlation between
         satisfaction and monthly base salary is not as strong as portrayed.
-        However, this trend is due to the higher maximum monthly base salary as
+        However, this trend is due to a higher maximum monthly base salary as
         the satisfaction level increases.
       </p>
       <div className="overflow-x-auto">

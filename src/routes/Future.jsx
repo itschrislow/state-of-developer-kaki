@@ -9,12 +9,12 @@ export default function Future() {
       </p>
       <br />
       <p>
-        However, these are 3 key improvements I would like to integrate for the
-        next year:
+        However, the following are 3 key improvements I would like to integrate
+        for the next year:
       </p>
-      <ul className="list-disc list-inside">
-        <li>Increase survey questions that are focused on technical aspects</li>
-        <li>Improve outreach to a larger and diverse group of developers</li>
+      <ul className="mt-5 lg:mt-0 ml-4 list-disc list-outside">
+        <li>Increase survey questions focused on technical aspects</li>
+        <li>Improve outreach to larger and diverse group of developers</li>
         <li>Deeper insights and breakdown of data through charts and trends</li>
       </ul>
       <br />

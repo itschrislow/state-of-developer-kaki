@@ -9,10 +9,7 @@ export default function LocationChoropleth() {
   return (
     <div id="location" className="chart">
       <h2 className="title">Location</h2>
-      <p>
-        Trend: Close to 80% of developers are based in Selangor, Kuala Lumpur
-        and Putrajaya
-      </p>
+      <p>Trend: Close to 80% of developers within the borders of Selangor</p>
       <div className="overflow-x-auto">
         <div className="mt-4 h-96 min-w-[880px] text-black">
           <ResponsiveChoropleth
