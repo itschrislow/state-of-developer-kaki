@@ -1,3 +1,5 @@
+import { handleGA4Event } from "../lib/ga4";
+
 export default function Future() {
   return (
     <div className="chart top">
@@ -26,6 +28,13 @@ export default function Future() {
           href="https://itschrislow.com/#contact"
           target="_blank"
           rel="noreferrer"
+          onClick={() =>
+            handleGA4Event({
+              category: "Social Media",
+              action: "Email (Future)",
+              label: "Email (Future)",
+            })
+          }
         >
           <span className="text-gradient">here</span>
         </a>
