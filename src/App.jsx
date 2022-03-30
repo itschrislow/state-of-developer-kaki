@@ -8,6 +8,7 @@ import Introduction from "./components/Introduction";
 import Findings from "./routes/Findings";
 import About from "./routes/About";
 import Custom404 from "./routes/Custom404";
+import Future from "./routes/Future.jsx";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route index element={<Introduction />} />
         <Route path={Paths.Findings} element={<Findings />} />
         <Route path={Paths.About} element={<About />} />
+        <Route path={Paths.Future} element={<Future />} />
       </Route>
       <Route path="*" element={<Custom404 />} />
     </Routes>

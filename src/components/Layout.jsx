@@ -9,8 +9,8 @@ import chevronDoubleRight from "../icons/chevronDoubleRight.svg";
 import SocialMedia from "./SocialMedia";
 import { handlePageview } from "../lib/ga4";
 
-const routes = ["/", "/findings", "/about"];
-const routeNames = ["00 Introduction", "01 Findings", "02 About"];
+const routes = ["/", "/findings", "/about", "/future"];
+const routeNames = ["00 Introduction", "01 Findings", "02 About", "03 Future"];
 
 const tableOfContents = [
   "Location",
@@ -136,22 +136,20 @@ export default function Layout() {
   );
 }
 
+const NavItem = ({ path, pathname }) => (
+  <NavLink to={path}>
+    {({ isActive }) => (
+      <p className={`py-2 font-semibold ${isActive ? "text-gradient" : ""}`}>
+        {pathname}
+      </p>
+    )}
+  </NavLink>
+);
+
 const Nav = ({ tableOfContents }) => (
   <div>
-    <NavLink to={Paths.Introduction}>
-      {({ isActive }) => (
-        <p className={`py-2 font-semibold ${isActive ? "text-gradient" : ""}`}>
-          00 Introduction
-        </p>
-      )}
-    </NavLink>
-    <NavLink to={Paths.Findings}>
-      {({ isActive }) => (
-        <p className={`py-2 font-semibold ${isActive ? "text-gradient" : ""}`}>
-          01 Findings
-        </p>
-      )}
-    </NavLink>
+    <NavItem path={Paths.Introduction} pathname="00 Introduction" />
+    <NavItem path={Paths.Findings} pathname="01 Findings" />
     {tableOfContents.map((item, index) => (
       <NavLink
         key={index}
@@ -165,37 +163,16 @@ const Nav = ({ tableOfContents }) => (
         </p>
       </NavLink>
     ))}
-    <NavLink to={Paths.About}>
-      {({ isActive }) => (
-        <p className={`py-2 font-semibold ${isActive ? "text-gradient" : ""}`}>
-          02 About
-        </p>
-      )}
-    </NavLink>
+    <NavItem path={Paths.About} pathname="02 About" />
+    <NavItem path={Paths.Future} pathname="03 Future" />
   </div>
 );
 
 const MobileNav = ({ tableOfContents, closeMobileMenu }) => (
   <div className="z-20 fixed inset-y-[57px] w-full px-6 py-2 flex flex-col justify-between bg-black border-b border-dashed">
     <div>
-      <NavLink to={Paths.Introduction} onClick={closeMobileMenu}>
-        {({ isActive }) => (
-          <p
-            className={`py-2 font-semibold ${isActive ? "text-gradient" : ""}`}
-          >
-            00 Introduction
-          </p>
-        )}
-      </NavLink>
-      <NavLink to={Paths.Findings} onClick={closeMobileMenu}>
-        {({ isActive }) => (
-          <p
-            className={`py-2 font-semibold ${isActive ? "text-gradient" : ""}`}
-          >
-            01 Findings
-          </p>
-        )}
-      </NavLink>
+      <NavItem path={Paths.Introduction} pathname="00 Introduction" />
+      <NavItem path={Paths.Findings} pathname="01 Findings" />
       {tableOfContents.map((item, index) => (
         <NavLink
           key={index}
@@ -210,15 +187,8 @@ const MobileNav = ({ tableOfContents, closeMobileMenu }) => (
           </p>
         </NavLink>
       ))}
-      <NavLink to={Paths.About} onClick={closeMobileMenu}>
-        {({ isActive }) => (
-          <p
-            className={`py-2 font-semibold ${isActive ? "text-gradient" : ""}`}
-          >
-            02 About
-          </p>
-        )}
-      </NavLink>
+      <NavItem path={Paths.About} pathname="02 About" />
+      <NavItem path={Paths.Future} pathname="03 Future" />
     </div>
     <SocialMedia className="py-2" />
   </div>
