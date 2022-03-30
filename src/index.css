@@ -31,5 +31,5 @@
 }
 
 .text-gradient {
-  @apply inline-block text-transparent bg-clip-text bg-gradient-to-r from-nivoOrange to-nivoPink;
+  @apply inline-block break-normal text-transparent bg-clip-text bg-gradient-to-r from-nivoOrange to-nivoPink;
 }
