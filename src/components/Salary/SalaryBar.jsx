@@ -14,8 +14,9 @@ export default function SalaryBar() {
         <div className="h-[450px] min-w-[600px] font-medium">
           <ResponsiveBar
             data={salaryData}
-            keys={["count"]}
+            keys={["percentage"]}
             indexBy="salary"
+            valueFormat={(value) => `${value}%`}
             margin={{ top: 40, right: 0, bottom: 30, left: 30 }}
             padding={0.3}
             theme={theme}
@@ -32,16 +33,16 @@ export default function SalaryBar() {
             fill={[{ match: "*", id: "gradient" }]}
             labelSkipWidth={12}
             labelSkipHeight={12}
-            gridYValues={[0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250]}
+            gridYValues={[0, 5, 10, 15, 20, 25, 30, 35, 40]}
             axisLeft={{
               tickSize: 5,
               tickPadding: 5,
               tickRotation: 0,
               legendPosition: "middle",
-              tickValues: [0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250],
+              tickValues: [0, 5, 10, 15, 20, 25, 30, 35, 40],
             }}
             tooltip={({ indexValue, value }) => (
-              <Tooltip label={indexValue} value={value} />
+              <Tooltip label={indexValue} value={`${value}%`} />
             )}
           />
         </div>
