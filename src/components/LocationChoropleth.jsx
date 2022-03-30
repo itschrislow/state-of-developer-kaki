@@ -9,10 +9,7 @@ export default function LocationChoropleth() {
   return (
     <div id="location" className="chart">
       <h2 className="title">Location</h2>
-      <p>
-        Trend: Close to 80% of developers are based in Selangor, Kuala Lumpur
-        and Putrajaya
-      </p>
+      <p>Trend: Close to 80% of developers within the borders of Selangor</p>
       <div className="overflow-x-auto">
         <div className="mt-4 h-96 min-w-[880px] text-black">
           <ResponsiveChoropleth
@@ -36,7 +33,10 @@ export default function LocationChoropleth() {
             ]}
             domain={[0, 5]}
             label="properties.name"
-            valueFormat={(value) => `${value * 20}%`}
+            valueFormat={(value) => {
+              if (value !== 5) return `${Number(value).toFixed(1)}%`;
+              else return `${value * 20}%`;
+            }}
             borderWidth={0.5}
             borderColor="#152538"
             theme={theme}

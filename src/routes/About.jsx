@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="chart">
+    <div className="chart top">
       <h2 className="title">About</h2>
       <p>
         The Developer Salary Survey is an ongoing survey published on July 26,

@@ -1,8 +1,8 @@
-// TODO: add percentage
 export const salaryData = [
   {
     salary: "<MYR 1k",
     count: 5,
+    percentage: "0.8",
     No: 0,
     "Yes, related field": 100,
     "Yes, unrelated field": 0,
@@ -20,6 +20,7 @@ export const salaryData = [
   {
     salary: "MYR 1k-3k",
     count: 59,
+    percentage: "9.8",
     No: 3.4,
     "Yes, related field": 89.8,
     "Yes, unrelated field": 6.8,
@@ -37,6 +38,7 @@ export const salaryData = [
   {
     salary: "MYR 3k-5k",
     count: 208,
+    percentage: "34.4",
     No: 3.4,
     "Yes, related field": 82.2,
     "Yes, unrelated field": 14.4,
@@ -54,6 +56,7 @@ export const salaryData = [
   {
     salary: "MYR 5k-10k",
     count: 241,
+    percentage: "39.8",
     No: 4.1,
     "Yes, related field": 76.8,
     "Yes, unrelated field": 18.3,
@@ -71,6 +74,7 @@ export const salaryData = [
   {
     salary: "MYR 10k-20k",
     count: 80,
+    percentage: "13.2",
     No: 1.3,
     "Yes, related field": 81.3,
     "Yes, unrelated field": 17.5,
@@ -88,6 +92,7 @@ export const salaryData = [
   {
     salary: ">MYR 20k",
     count: 12,
+    percentage: "2.0",
     No: 0,
     "Yes, related field": 83.3,
     "Yes, unrelated field": 16.7,

@@ -5,7 +5,7 @@ import GenderWaffle from "../components/GenderWaffle";
 import YOEBar from "../components/YOEBar";
 import EducationPies from "../components/EducationPies";
 import SalaryBars from "../components/Salary";
-// import SatisfactionScatterPlot from "../components/SatisfactionScatterPlot";
+import SatisfactionScatterPlot from "../components/SatisfactionScatterPlot";
 import LocationChoropleth from "../components/LocationChoropleth";
 
 export default function Findings() {
@@ -17,13 +17,13 @@ export default function Findings() {
   }, [state]);
 
   return (
-    <div>
+    <div className="top">
       <LocationChoropleth />
       <GenderWaffle />
       <YOEBar />
       <EducationPies />
       <SalaryBars />
-      {/* <SatisfactionScatterPlot /> */}
+      <SatisfactionScatterPlot />
     </div>
   );
 }
