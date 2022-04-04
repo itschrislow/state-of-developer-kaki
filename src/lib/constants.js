@@ -1,4 +1,4 @@
-export const Paths = {
+export const PATHS = {
   Introduction: "/",
   Findings: "/findings",
   About: "/about",
