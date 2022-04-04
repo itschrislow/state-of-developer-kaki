@@ -9,7 +9,7 @@ export default function EducationPies() {
     <div id="education" className="chart">
       <div className="social-share-header">
         <h2 className="title">Education</h2>
-        <SocialSharing path="/findings/%23education" />
+        <SocialSharing path="/findings/#education" />
       </div>
       <div className="mb-6 sm:mb-0 flex flex-col sm:flex-row-reverse items-center text-gray-900">
         <p className="mb-4 w-full sm:w-1/2 text-gray-100">

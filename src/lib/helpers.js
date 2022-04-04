@@ -1,15 +1,21 @@
 export const shareToFacebook = (url) => {
-  const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+  const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+    url
+  )}`;
   window.open(shareUrl, "NewWindow");
 };
 
 export const shareToWhatsapp = (url) => {
-  const shareUrl = `https://api.whatsapp.com/send?text=${url}`;
+  const shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
+    url
+  )}`;
   window.open(shareUrl, "NewWindow");
 };
 
 export const shareToTwitter = (url) => {
-  const shareUrl = `https://twitter.com/intent/tweet?url=${url}`;
+  const shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+    url
+  )}`;
   window.open(shareUrl, "NewWindow");
 };
 

@@ -11,7 +11,7 @@ import {
   shareToFacebook,
   shareToTwitter,
   shareToWhatsapp,
-} from "../lib/socials";
+} from "../lib/helpers";
 
 export default function SocialSharing({ path }) {
   const [isOpen, setIsOpen] = useState(false);

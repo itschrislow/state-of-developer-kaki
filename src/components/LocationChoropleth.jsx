@@ -12,7 +12,7 @@ export default function LocationChoropleth() {
     <div id="location" className="chart">
       <div className="social-share-header">
         <h2 className="title">Location</h2>
-        <SocialSharing path="/findings/%23location" />
+        <SocialSharing path="/findings/#location" />
       </div>
       <p>Trend: Close to 80% of developers within the borders of Selangor</p>
       <div className="overflow-x-auto">
