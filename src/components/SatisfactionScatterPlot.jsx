@@ -24,7 +24,7 @@ export default function SatisfactionScatterPlot() {
     <div id="satisfaction" className="chart">
       <div className="social-share-header">
         <h2 className="title">Satisfaction</h2>
-        <SocialSharing path="/#satisfaction" />
+        <SocialSharing path="/findings/%23satisfaction" />
       </div>
       <p>
         Trend: The satisfaction level of developers increases as monthly base

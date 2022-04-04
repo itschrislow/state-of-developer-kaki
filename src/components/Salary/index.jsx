@@ -20,7 +20,7 @@ export default function SalaryBars() {
     <div id="salary" className="chart">
       <div className="social-share-header">
         <h2 className="title">Salary</h2>
-        <SocialSharing path="/#salary" />
+        <SocialSharing path="/findings/%23salary" />
       </div>
       <div className="mb-4 h-full text-gray-900">
         {toggleCompare === CompareTo.Percentage && <SalaryBar />}

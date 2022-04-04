@@ -9,7 +9,7 @@ export default function GenderWaffle() {
     <div id="gender" className="chart">
       <div className="social-share-header">
         <h2 className="title">Gender</h2>
-        <SocialSharing path="/#gender" />
+        <SocialSharing path="/findings/%23gender" />
       </div>
       <p>Trend: Only 1 in 10 developers are female/other</p>
       <div className="mt-4 md:mt-6 lg:mt-10 h-28 text-gray-900">

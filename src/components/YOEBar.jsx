@@ -18,7 +18,7 @@ export default function YOEBar() {
     <div id="experience" className="chart">
       <div className="social-share-header">
         <h2 className="title">Years of Experience</h2>
-        <SocialSharing path="/#experience" />
+        <SocialSharing path="/findings/%23experience" />
       </div>
       <p>
         Trend: Almost 60% of developers have either {"<"}1 YOE or between 2-5

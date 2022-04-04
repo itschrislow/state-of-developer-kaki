@@ -70,7 +70,9 @@ export default function SocialSharing({ path }) {
                   <button
                     className="social-share-item"
                     onClick={() =>
-                      shareToFacebook(process.env.REACT_APP_BASE_URL + path)
+                      shareToFacebook(
+                        `${process.env.REACT_APP_BASE_URL}${path}`
+                      )
                     }
                   >
                     <img
@@ -84,7 +86,9 @@ export default function SocialSharing({ path }) {
                   <button
                     className="social-share-item"
                     onClick={() =>
-                      shareToWhatsapp(process.env.REACT_APP_BASE_URL + path)
+                      shareToWhatsapp(
+                        `${process.env.REACT_APP_BASE_URL}${path}`
+                      )
                     }
                   >
                     <img
@@ -98,7 +102,7 @@ export default function SocialSharing({ path }) {
                   <button
                     className="social-share-item"
                     onClick={() =>
-                      shareToTwitter(process.env.REACT_APP_BASE_URL + path)
+                      shareToTwitter(`${process.env.REACT_APP_BASE_URL}${path}`)
                     }
                   >
                     <img
@@ -112,7 +116,9 @@ export default function SocialSharing({ path }) {
                   <button
                     className="social-share-item"
                     onClick={() =>
-                      copyLinkToClipboard(process.env.REACT_APP_BASE_URL + path)
+                      copyLinkToClipboard(
+                        `${process.env.REACT_APP_BASE_URL}${path}`
+                      )
                     }
                   >
                     <img src={link} alt="Copy link" className="w-6 h-6" />
