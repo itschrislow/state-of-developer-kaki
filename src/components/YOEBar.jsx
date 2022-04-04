@@ -20,7 +20,12 @@ export default function YOEBar() {
     <div id="experience" className="chart">
       <div className="social-share-header">
         <h2 className="title">Years of Experience</h2>
-        <SocialSharing path="/findings/#experience" />
+        <SocialSharing
+          path="/findings#experience"
+          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/YOE-${
+            key === YoeKeys.Percentage ? "percentage" : "count"
+          }.png`}
+        />
       </div>
       <p>
         Trend: Almost 60% of developers have either {"<"}1 YOE or between 2-5

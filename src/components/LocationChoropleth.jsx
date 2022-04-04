@@ -25,7 +25,10 @@ export default function LocationChoropleth() {
     <div id="location" className="chart">
       <div className="social-share-header">
         <h2 className="title">Location</h2>
-        <SocialSharing path="/findings/#location" />
+        <SocialSharing
+          path="/findings#location"
+          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/location.png`}
+        />
       </div>
       <p>Trend: Close to 80% of developers within the borders of Selangor</p>
       <div className="overflow-x-auto">
@@ -77,11 +80,11 @@ export default function LocationChoropleth() {
             )}
           />
         </div>
-        <p className="mt-2 chart-footer">
-          {count} responses ({getPercentage(count, TOTAL_RESPONSES, 1)}% of
-          total responses)
-        </p>
       </div>
+      <p className="mt-2 chart-footer">
+        {count} responses ({getPercentage(count, TOTAL_RESPONSES, 1)}% of total
+        responses)
+      </p>
     </div>
   );
 }

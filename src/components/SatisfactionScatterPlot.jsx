@@ -26,7 +26,12 @@ export default function SatisfactionScatterPlot() {
     <div id="satisfaction" className="chart">
       <div className="social-share-header">
         <h2 className="title">Satisfaction</h2>
-        <SocialSharing path="/findings/#satisfaction" />
+        <SocialSharing
+          path="/findings#satisfaction"
+          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/satisfaction-${
+            key === SatisfactionKeys.Median ? "median" : "average"
+          }.png`}
+        />
       </div>
       <p>
         Trend: The satisfaction level of developers increases as monthly base

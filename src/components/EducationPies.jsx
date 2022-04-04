@@ -16,7 +16,10 @@ export default function EducationPies() {
     <div id="education" className="chart">
       <div className="social-share-header">
         <h2 className="title">Education</h2>
-        <SocialSharing path="/findings/#education" />
+        <SocialSharing
+          path="/findings#education"
+          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/education.png`}
+        />
       </div>
       <div className="mb-6 sm:mb-0 flex flex-col sm:flex-row-reverse items-center text-gray-900">
         <p className="mb-4 w-full sm:w-1/2 text-gray-100">
@@ -47,7 +50,7 @@ export default function EducationPies() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col sm:flex-row-reverse items-center text-gray-900">
+      <div className="flex flex-col sm:flex-row items-center text-gray-900">
         <p className="mb-4 w-full sm:w-1/2 text-gray-100">
           Trend: Only 37% of developers who did not have higher education or
           studied an unrelated field joined a bootcamp

@@ -19,11 +19,23 @@ const CompareTo = {
 export default function SalaryBars() {
   const [toggleCompare, setToggleCompare] = useState(CompareTo.Percentage);
 
+  const getImagePath = () => {
+    if (toggleCompare === CompareTo.Percentage) return "percentage";
+    if (toggleCompare === CompareTo.Yoe) return "by-YOE";
+    if (toggleCompare === CompareTo.Education) return "by-education";
+    if (toggleCompare === CompareTo.Gender) return "by-gender";
+  };
+
   return (
     <div id="salary" className="chart">
       <div className="social-share-header">
         <h2 className="title">Salary</h2>
-        <SocialSharing path="/findings/#salary" />
+        <SocialSharing
+          path="/findings#salary"
+          imageLink={`${
+            process.env.REACT_APP_BASE_IMAGE_URL
+          }/education-${getImagePath()}.png`}
+        />
       </div>
       <div className="mb-4 h-full text-gray-900">
         {toggleCompare === CompareTo.Percentage && <SalaryBar />}
