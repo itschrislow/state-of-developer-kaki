@@ -1,10 +1,35 @@
+import { useEffect, useState } from "react";
+
 import linkedIn from "../icons/linkedIn.svg";
 import github from "../icons/github.svg";
 import portfolio from "../icons/portfolio.svg";
 import email from "../icons/email.svg";
+import link from "../icons/link.svg";
+import tick from "../icons/tick.svg";
 import { handleGA4Event } from "../lib/ga4";
+import { copyLinkToClipboard } from "../lib/helpers";
 
 export default function SocialMedia({ className }) {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopyLink = () => {
+    handleGA4Event({
+      category: "Social Media",
+      action: "Copy Link",
+      label: "Copy Link",
+    });
+    setIsCopied(true);
+    copyLinkToClipboard(process.env.REACT_APP_BASE_URL);
+  };
+
+  useEffect(() => {
+    if (isCopied) {
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 1000);
+    }
+  }, [isCopied]);
+
   return (
     <div className={`w-full flex items-center gap-4 ${className}`}>
       <a
@@ -51,7 +76,7 @@ export default function SocialMedia({ className }) {
           <img src={portfolio} alt="Portfolio" className="w-[30px] h-[30px]" />
         </a>
       </div>
-      <div className="-ml-1">
+      <div className="-ml-[6px]">
         <a
           href="https://itschrislow.com/#contact"
           target="_blank"
@@ -66,6 +91,15 @@ export default function SocialMedia({ className }) {
         >
           <img src={email} alt="Email" className="w-[30px] h-[30px]" />
         </a>
+      </div>
+      <div className="-ml-[6px] inline-flex">
+        <button onClick={handleCopyLink}>
+          <img
+            src={isCopied ? tick : link}
+            alt="Copy link"
+            className="w-7 h-7"
+          />
+        </button>
       </div>
     </div>
   );
