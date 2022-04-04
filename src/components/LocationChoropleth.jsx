@@ -6,9 +6,10 @@ import SocialSharing from "./SocialSharing";
 
 import theme from "../lib/nivo";
 import malaysia from "../data/malaysia";
-import { BREAKPOINTS } from "../lib/constants";
-import { locationData } from "../data/location";
+import { BREAKPOINTS, TOTAL_RESPONSES } from "../lib/constants";
+import { count, locationData } from "../data/location";
 import { useWindowSize } from "../hooks/useWindowSize";
+import { getPercentage } from "../lib/helpers";
 
 export default function LocationChoropleth() {
   const { width } = useWindowSize();
@@ -76,6 +77,10 @@ export default function LocationChoropleth() {
             )}
           />
         </div>
+        <p className="mt-2 chart-footer">
+          {count} responses ({getPercentage(count, TOTAL_RESPONSES, 1)}% of
+          total responses)
+        </p>
       </div>
     </div>
   );

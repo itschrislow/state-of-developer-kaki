@@ -1,3 +1,5 @@
+export const TOTAL_RESPONSES = 605;
+
 export const PATHS = {
   Introduction: "/",
   Findings: "/findings",

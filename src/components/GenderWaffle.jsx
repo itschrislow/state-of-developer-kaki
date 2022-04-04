@@ -1,8 +1,10 @@
 import { ResponsiveWaffle } from "@nivo/waffle";
 
 import theme from "../lib/nivo";
-import { genderData, total } from "../data/gender";
+import { genderData, count } from "../data/gender";
 import SocialSharing from "./SocialSharing";
+import { getPercentage } from "../lib/helpers";
+import { TOTAL_RESPONSES } from "../lib/constants";
 
 export default function GenderWaffle() {
   return (
@@ -15,7 +17,7 @@ export default function GenderWaffle() {
       <div className="mt-4 md:mt-6 lg:mt-10 h-28 text-gray-900">
         <ResponsiveWaffle
           data={genderData}
-          total={total}
+          total={count}
           rows={1}
           columns={10}
           padding={-20}
@@ -27,6 +29,7 @@ export default function GenderWaffle() {
               anchor: "bottom",
               direction: "row",
               justify: false,
+              translateX: 35,
               translateY: 10,
               itemWidth: 130,
               itemHeight: 20,
@@ -37,6 +40,10 @@ export default function GenderWaffle() {
           cellComponent={CustomCell}
         />
       </div>
+      <p className="mt-4 chart-footer">
+        {count} responses ({getPercentage(count, TOTAL_RESPONSES, 1)}% of total
+        responses)
+      </p>
     </div>
   );
 }

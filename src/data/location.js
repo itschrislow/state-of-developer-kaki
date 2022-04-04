@@ -15,3 +15,5 @@ export const locationData = [
   { id: "W.P. Kuala Lumpur", value: "27.4" },
   { id: "W.P. Putrajaya", value: "0.4" },
 ];
+
+export const count = 566;

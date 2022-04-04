@@ -5,4 +5,4 @@ export const genderData = [
   // { id: "Other", label: "Other", value: 2 },
 ];
 
-export const total = 605;
+export const count = 605;

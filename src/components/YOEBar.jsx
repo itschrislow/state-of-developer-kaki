@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { ResponsiveBar } from "@nivo/bar";
 
-import { yoeData } from "../data/yoe";
+import { yoeData, count } from "../data/yoe";
 import theme from "../lib/nivo";
 import Tooltip from "./Tooltip";
 import SocialSharing from "./SocialSharing";
+import { getPercentage } from "../lib/helpers";
+import { TOTAL_RESPONSES } from "../lib/constants";
 
 const YoeKeys = {
   Count: "count",
@@ -25,12 +27,12 @@ export default function YOEBar() {
         YOE
       </p>
       <div className="overflow-x-auto">
-        <div className="my-4 h-96 min-w-[600px] text-gray-900 font-mono">
+        <div className="mt-4 h-96 min-w-[600px] text-gray-900 font-mono">
           <ResponsiveBar
             data={yoeData}
             keys={[key]}
             indexBy="yoe"
-            margin={{ top: 40, right: 0, bottom: 30, left: 30 }}
+            margin={{ top: 40, right: 0, bottom: 25, left: 30 }}
             padding={0.4}
             theme={theme}
             valueFormat={(value) =>
@@ -81,6 +83,10 @@ export default function YOEBar() {
           />
         </div>
       </div>
+      <p className="my-4 chart-footer">
+        {count} responses ({getPercentage(count, TOTAL_RESPONSES, 1)}% of total
+        responses)
+      </p>
       <div className="w-full flex justify-center">
         <div className="tabs">
           <button
