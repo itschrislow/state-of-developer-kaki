@@ -3,7 +3,7 @@ import { handleGA4Event } from "../lib/ga4";
 export default function Future() {
   return (
     <div className="chart top">
-      <h1 className="title">Future</h1>
+      <h1 className="mb-4 title">Future</h1>
       <p>
         This is the first release of the state of DeveloperKaki and I plan to
         continue working on this project every year. As this is currently a

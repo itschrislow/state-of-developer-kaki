@@ -3,7 +3,7 @@ import { handleGA4Event } from "../lib/ga4";
 export default function About() {
   return (
     <div className="chart top">
-      <h2 className="title">About</h2>
+      <h2 className="mb-4 title">About</h2>
       <p>
         The Developer Salary Survey is an ongoing survey published on July 26,
         2021 and there were a total of 634 responses in 2021.
