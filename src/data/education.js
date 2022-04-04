@@ -12,10 +12,14 @@ export const higherEducation = [
     value: 94,
     percentage: 15.5,
   },
-  { id: "Blank", label: "Blank", value: 2, percentage: 0.3 },
+  // { id: "Blank", label: "Blank", value: 2, percentage: 0.3 },
 ];
+
+export const higherEducationCount = 603;
 
 export const bootcamp = [
   { id: "Yes", label: "Yes", value: 37 },
   { id: "No", label: "No", value: 77 },
 ];
+
+export const bootcampCount = 114;
