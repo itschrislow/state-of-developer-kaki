@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { ResponsiveChoropleth } from "@nivo/geo";
 
 import Tooltip from "./Tooltip";
@@ -5,9 +6,20 @@ import SocialSharing from "./SocialSharing";
 
 import theme from "../lib/nivo";
 import malaysia from "../data/malaysia";
+import { BREAKPOINTS } from "../lib/constants";
 import { locationData } from "../data/location";
+import { useWindowSize } from "../hooks/useWindowSize";
 
 export default function LocationChoropleth() {
+  const { width } = useWindowSize();
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (width < BREAKPOINTS.LG) setIsMobile(true);
+    else setIsMobile(false);
+  }, [width]);
+
   return (
     <div id="location" className="chart">
       <div className="social-share-header">
@@ -21,7 +33,7 @@ export default function LocationChoropleth() {
             data={locationData}
             features={malaysia.features}
             projectionTranslation={[0, 1]}
-            projectionRotation={[-98, 0, 0]}
+            projectionRotation={[isMobile ? -98 : -96, 0, 0]}
             projectionScale={2750}
             margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
             colors={[
