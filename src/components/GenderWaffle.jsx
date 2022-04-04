@@ -11,7 +11,7 @@ export default function GenderWaffle() {
         <h2 className="title">Gender</h2>
         <SocialSharing path="/findings/#gender" />
       </div>
-      <p>Trend: Only 1 in 10 developers are female/other</p>
+      <p>Trend: Only 1 in 10 developers are females/others</p>
       <div className="mt-4 md:mt-6 lg:mt-10 h-28 text-gray-900">
         <ResponsiveWaffle
           data={genderData}
@@ -28,7 +28,7 @@ export default function GenderWaffle() {
               direction: "row",
               justify: false,
               translateY: 10,
-              itemWidth: 90,
+              itemWidth: 130,
               itemHeight: 20,
               symbolSize: 20,
               symbolShape: "circle",
