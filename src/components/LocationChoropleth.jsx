@@ -1,6 +1,8 @@
 import { ResponsiveChoropleth } from "@nivo/geo";
 
 import Tooltip from "./Tooltip";
+import SocialSharing from "./SocialSharing";
+
 import theme from "../lib/nivo";
 import malaysia from "../data/malaysia";
 import { locationData } from "../data/location";
@@ -8,7 +10,10 @@ import { locationData } from "../data/location";
 export default function LocationChoropleth() {
   return (
     <div id="location" className="chart">
-      <h2 className="title">Location</h2>
+      <div className="social-share-header">
+        <h2 className="title">Location</h2>
+        <SocialSharing path="/findings/#location" />
+      </div>
       <p>Trend: Close to 80% of developers within the borders of Selangor</p>
       <div className="overflow-x-auto">
         <div className="mt-4 h-96 min-w-[880px] text-black">

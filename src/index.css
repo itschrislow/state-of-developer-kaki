@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .title {
-  @apply mb-4 text-3xl lg:text-4xl font-semibold uppercase;
+  @apply text-3xl lg:text-4xl font-semibold uppercase;
 }
 
 .subtitle {
@@ -32,4 +32,14 @@
 
 .text-gradient {
   @apply box-decoration-clone text-transparent bg-clip-text bg-gradient-to-r from-nivoOrange to-nivoPink;
+}
+
+/* Used with titles in /findings sections */
+.social-share-header {
+  @apply mb-4 flex items-center justify-between lg:justify-start gap-0 lg:gap-4;
+}
+
+/* Used in SocialSharing.jsx */
+.social-share-item {
+  @apply px-4 py-3 lg:py-4 flex items-center gap-4 hover:bg-white hover:bg-opacity-10;
 }

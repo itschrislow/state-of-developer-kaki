@@ -2,11 +2,15 @@ import { ResponsiveWaffle } from "@nivo/waffle";
 
 import theme from "../lib/nivo";
 import { genderData, total } from "../data/gender";
+import SocialSharing from "./SocialSharing";
 
 export default function GenderWaffle() {
   return (
     <div id="gender" className="chart">
-      <h2 className="title">Gender</h2>
+      <div className="social-share-header">
+        <h2 className="title">Gender</h2>
+        <SocialSharing path="/findings/#gender" />
+      </div>
       <p>Trend: Only 1 in 10 developers are female/other</p>
       <div className="mt-4 md:mt-6 lg:mt-10 h-28 text-gray-900">
         <ResponsiveWaffle

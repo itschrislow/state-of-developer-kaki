@@ -4,6 +4,7 @@ import { ResponsiveBar } from "@nivo/bar";
 import { yoeData } from "../data/yoe";
 import theme from "../lib/nivo";
 import Tooltip from "./Tooltip";
+import SocialSharing from "./SocialSharing";
 
 const YoeKeys = {
   Count: "count",
@@ -15,7 +16,10 @@ export default function YOEBar() {
 
   return (
     <div id="experience" className="chart">
-      <h2 className="title">Years of Experience</h2>
+      <div className="social-share-header">
+        <h2 className="title">Years of Experience</h2>
+        <SocialSharing path="/findings/#experience" />
+      </div>
       <p>
         Trend: Almost 60% of developers have either {"<"}1 YOE or between 2-5
         YOE

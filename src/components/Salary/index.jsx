@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SocialSharing from "../SocialSharing";
 
 import SalaryByEducation from "./byEducation";
 import SalaryByGender from "./byGender";
@@ -17,7 +18,10 @@ export default function SalaryBars() {
 
   return (
     <div id="salary" className="chart">
-      <h2 className="title">Salary</h2>
+      <div className="social-share-header">
+        <h2 className="title">Salary</h2>
+        <SocialSharing path="/findings/#salary" />
+      </div>
       <div className="mb-4 h-full text-gray-900">
         {toggleCompare === CompareTo.Percentage && <SalaryBar />}
         {toggleCompare === CompareTo.Yoe && <SalaryByYoe />}

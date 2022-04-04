@@ -4,6 +4,7 @@ import { ResponsiveScatterPlot } from "@nivo/scatterplot";
 import theme from "../lib/nivo";
 import Tooltip from "./Tooltip";
 import { median, average } from "../data/satisfaction";
+import SocialSharing from "./SocialSharing";
 
 const SatisfactionKeys = {
   Median: "Median",
@@ -21,7 +22,10 @@ export default function SatisfactionScatterPlot() {
 
   return (
     <div id="satisfaction" className="chart">
-      <h2 className="title">Satisfaction</h2>
+      <div className="social-share-header">
+        <h2 className="title">Satisfaction</h2>
+        <SocialSharing path="/findings/#satisfaction" />
+      </div>
       <p>
         Trend: The satisfaction level of developers increases as monthly base
         salary increases.
