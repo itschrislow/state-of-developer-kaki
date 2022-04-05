@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
-import { Paths } from "./lib/paths.js";
+import { PATHS } from "./lib/constants";
 
 import Layout from "./components/Layout";
 import Introduction from "./components/Introduction";
@@ -15,9 +15,9 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Introduction />} />
-        <Route path={Paths.Findings} element={<Findings />} />
-        <Route path={Paths.About} element={<About />} />
-        <Route path={Paths.Future} element={<Future />} />
+        <Route path={PATHS.Findings} element={<Findings />} />
+        <Route path={PATHS.About} element={<About />} />
+        <Route path={PATHS.Future} element={<Future />} />
       </Route>
       <Route path="*" element={<Custom404 />} />
     </Routes>

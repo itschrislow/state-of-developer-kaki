@@ -1,21 +1,26 @@
 import { ResponsiveWaffle } from "@nivo/waffle";
 
 import theme from "../lib/nivo";
-import { genderData, total } from "../data/gender";
+import { genderData, count } from "../data/gender";
 import SocialSharing from "./SocialSharing";
+import { getPercentage } from "../lib/helpers";
+import { TOTAL_RESPONSES } from "../lib/constants";
 
 export default function GenderWaffle() {
   return (
     <div id="gender" className="chart">
       <div className="social-share-header">
         <h2 className="title">Gender</h2>
-        <SocialSharing path="/findings/#gender" />
+        <SocialSharing
+          path="/findings#gender"
+          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/gender.png`}
+        />
       </div>
-      <p>Trend: Only 1 in 10 developers are female/other</p>
+      <p>Trend: Only 1 in 10 developers are females/others</p>
       <div className="mt-4 md:mt-6 lg:mt-10 h-28 text-gray-900">
         <ResponsiveWaffle
           data={genderData}
-          total={total}
+          total={count}
           rows={1}
           columns={10}
           padding={-20}
@@ -27,8 +32,9 @@ export default function GenderWaffle() {
               anchor: "bottom",
               direction: "row",
               justify: false,
+              translateX: 35,
               translateY: 10,
-              itemWidth: 90,
+              itemWidth: 130,
               itemHeight: 20,
               symbolSize: 20,
               symbolShape: "circle",
@@ -37,6 +43,10 @@ export default function GenderWaffle() {
           cellComponent={CustomCell}
         />
       </div>
+      <p className="mt-4 chart-footer">
+        {count} responses ({getPercentage(count, TOTAL_RESPONSES, 1)}% of total
+        responses)
+      </p>
     </div>
   );
 }

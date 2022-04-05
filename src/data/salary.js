@@ -108,3 +108,5 @@ export const salaryData = [
     Other: "8.3",
   },
 ];
+
+export const count = 605;

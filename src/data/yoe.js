@@ -6,3 +6,5 @@ export const yoeData = [
   { yoe: "10-20 years", count: 44, percentage: 7.3 },
   { yoe: ">20 years", count: 1, percentage: 0.2 },
 ];
+
+export const count = 605;

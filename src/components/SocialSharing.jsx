@@ -1,11 +1,13 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 import facebook from "../icons/facebook.svg";
 import whatsapp from "../icons/whatsapp.svg";
 import twitter from "../icons/twitter.svg";
 import link from "../icons/link.svg";
 import share from "../icons/share.svg";
+import download from "../icons/download.svg";
+import tick from "../icons/tick.svg";
 import {
   copyLinkToClipboard,
   shareToFacebook,
@@ -13,11 +15,20 @@ import {
   shareToWhatsapp,
 } from "../lib/helpers";
 
-export default function SocialSharing({ path }) {
+export default function SocialSharing({ path, imageLink }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
+
+  useEffect(() => {
+    if (isCopied) {
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 3000);
+    }
+  }, [isCopied]);
 
   return (
     <>
@@ -77,10 +88,10 @@ export default function SocialSharing({ path }) {
                   >
                     <img
                       src={facebook}
-                      alt="Share on Facebook"
+                      alt="Share chart on Facebook"
                       className="w-6 h-6"
                     />
-                    <h4>Share on Facebook</h4>
+                    <h4>Share chart on Facebook</h4>
                   </button>
                   {/* WHATSAPP */}
                   <button
@@ -93,10 +104,10 @@ export default function SocialSharing({ path }) {
                   >
                     <img
                       src={whatsapp}
-                      alt="Share on Whatsapp"
+                      alt="Share chart on Whatsapp"
                       className="w-6 h-6"
                     />
-                    <h4>Share on Whatsapp</h4>
+                    <h4>Share chart on Whatsapp</h4>
                   </button>
                   {/* TWITTER */}
                   <button
@@ -107,23 +118,40 @@ export default function SocialSharing({ path }) {
                   >
                     <img
                       src={twitter}
-                      alt="Share on Twitter"
+                      alt="Share chart on Twitter"
                       className="w-6 h-6"
                     />
-                    <h4>Share on Twitter</h4>
+                    <h4>Share chart on Twitter</h4>
                   </button>
                   {/* COPY LINK */}
                   <button
                     className="social-share-item"
-                    onClick={() =>
+                    onClick={() => {
                       copyLinkToClipboard(
                         `${process.env.REACT_APP_BASE_URL}${path}`
-                      )
-                    }
+                      );
+                      setIsCopied(true);
+                    }}
                   >
-                    <img src={link} alt="Copy link" className="w-6 h-6" />
+                    <img
+                      src={isCopied ? tick : link}
+                      alt="Copy link"
+                      className="w-6 h-6"
+                    />
                     <h4>Copy link</h4>
                   </button>
+                  {/* DOWNLOAD IMAGE */}
+                  {imageLink && (
+                    <a
+                      className="social-share-item"
+                      target="_blank"
+                      rel="noreferrer"
+                      href={imageLink}
+                    >
+                      <img src={download} alt="Copy link" className="w-6 h-6" />
+                      <h4>Download chart</h4>
+                    </a>
+                  )}
                 </div>
               </div>
             </Transition.Child>

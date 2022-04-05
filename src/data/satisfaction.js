@@ -34,6 +34,8 @@ export const average = [
   },
 ];
 
+export const count = 605;
+
 export const raw = [
   {
     id: "Satisfaction",

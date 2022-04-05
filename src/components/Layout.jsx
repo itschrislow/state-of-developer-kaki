@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 
-import { Paths } from "../lib/paths";
+import { PATHS } from "../lib/constants";
 import cross from "../icons/cross.svg";
 import hamburger from "../icons/hamburger.svg";
 import chevronDoubleLeft from "../icons/chevronDoubleLeft.svg";
@@ -148,12 +148,12 @@ const NavItem = ({ path, pathname }) => (
 
 const Nav = ({ tableOfContents }) => (
   <div>
-    <NavItem path={Paths.Introduction} pathname="00 Introduction" />
-    <NavItem path={Paths.Findings} pathname="01 Findings" />
+    <NavItem path={PATHS.Introduction} pathname="00 Introduction" />
+    <NavItem path={PATHS.Findings} pathname="01 Findings" />
     {tableOfContents.map((item, index) => (
       <NavLink
         key={index}
-        to={Paths.Findings}
+        to={PATHS.Findings}
         state={{
           id: item.toLowerCase(),
         }}
@@ -163,20 +163,20 @@ const Nav = ({ tableOfContents }) => (
         </p>
       </NavLink>
     ))}
-    <NavItem path={Paths.About} pathname="02 About" />
-    <NavItem path={Paths.Future} pathname="03 Future" />
+    <NavItem path={PATHS.About} pathname="02 About" />
+    <NavItem path={PATHS.Future} pathname="03 Future" />
   </div>
 );
 
 const MobileNav = ({ tableOfContents, closeMobileMenu }) => (
   <div className="z-20 fixed inset-y-[57px] w-full px-6 py-2 flex flex-col justify-between bg-black border-b border-dashed">
     <div>
-      <NavItem path={Paths.Introduction} pathname="00 Introduction" />
-      <NavItem path={Paths.Findings} pathname="01 Findings" />
+      <NavItem path={PATHS.Introduction} pathname="00 Introduction" />
+      <NavItem path={PATHS.Findings} pathname="01 Findings" />
       {tableOfContents.map((item, index) => (
         <NavLink
           key={index}
-          to={Paths.Findings}
+          to={PATHS.Findings}
           state={{
             id: item.toLowerCase(),
           }}
@@ -187,8 +187,8 @@ const MobileNav = ({ tableOfContents, closeMobileMenu }) => (
           </p>
         </NavLink>
       ))}
-      <NavItem path={Paths.About} pathname="02 About" />
-      <NavItem path={Paths.Future} pathname="03 Future" />
+      <NavItem path={PATHS.About} pathname="02 About" />
+      <NavItem path={PATHS.Future} pathname="03 Future" />
     </div>
     <SocialMedia className="py-2" />
   </div>

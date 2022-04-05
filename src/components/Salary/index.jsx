@@ -5,6 +5,9 @@ import SalaryByEducation from "./byEducation";
 import SalaryByGender from "./byGender";
 import SalaryByYoe from "./byYOE";
 import SalaryBar from "./SalaryBar";
+import { count } from "../../data/salary";
+import { getPercentage } from "../../lib/helpers";
+import { TOTAL_RESPONSES } from "../../lib/constants";
 
 const CompareTo = {
   Percentage: "Percentage",
@@ -16,11 +19,23 @@ const CompareTo = {
 export default function SalaryBars() {
   const [toggleCompare, setToggleCompare] = useState(CompareTo.Percentage);
 
+  const getImagePath = () => {
+    if (toggleCompare === CompareTo.Percentage) return "percentage";
+    if (toggleCompare === CompareTo.Yoe) return "by-YOE";
+    if (toggleCompare === CompareTo.Education) return "by-education";
+    if (toggleCompare === CompareTo.Gender) return "by-gender";
+  };
+
   return (
     <div id="salary" className="chart">
       <div className="social-share-header">
         <h2 className="title">Salary</h2>
-        <SocialSharing path="/findings/#salary" />
+        <SocialSharing
+          path="/findings#salary"
+          imageLink={`${
+            process.env.REACT_APP_BASE_IMAGE_URL
+          }/education-${getImagePath()}.png`}
+        />
       </div>
       <div className="mb-4 h-full text-gray-900">
         {toggleCompare === CompareTo.Percentage && <SalaryBar />}
@@ -28,6 +43,10 @@ export default function SalaryBars() {
         {toggleCompare === CompareTo.Education && <SalaryByEducation />}
         {toggleCompare === CompareTo.Gender && <SalaryByGender />}
       </div>
+      <p className="my-4 chart-footer">
+        {count} responses ({getPercentage(count, TOTAL_RESPONSES, 1)}% of total
+        responses)
+      </p>
       <div className="grid grid-rows-2 sm:grid-rows-1 grid-cols-2 sm:grid-cols-4 text-sm">
         {Object.keys(CompareTo).map((key) => {
           return (

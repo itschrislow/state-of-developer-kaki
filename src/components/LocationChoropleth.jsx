@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { ResponsiveChoropleth } from "@nivo/geo";
 
 import Tooltip from "./Tooltip";
@@ -5,23 +6,40 @@ import SocialSharing from "./SocialSharing";
 
 import theme from "../lib/nivo";
 import malaysia from "../data/malaysia";
-import { locationData } from "../data/location";
+import { BREAKPOINTS, TOTAL_RESPONSES } from "../lib/constants";
+import { count, locationData } from "../data/location";
+import { useWindowSize } from "../hooks/useWindowSize";
+import { getPercentage } from "../lib/helpers";
 
 export default function LocationChoropleth() {
+  const { width } = useWindowSize();
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (width < BREAKPOINTS.LG) setIsMobile(true);
+    else setIsMobile(false);
+  }, [width]);
+
   return (
     <div id="location" className="chart">
       <div className="social-share-header">
         <h2 className="title">Location</h2>
-        <SocialSharing path="/findings/#location" />
+        <SocialSharing
+          path="/findings#location"
+          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/location.png`}
+        />
       </div>
-      <p>Trend: Close to 80% of developers within the borders of Selangor</p>
+      <p>
+        Trend: Close to 80% of developers reside within the borders of Selangor
+      </p>
       <div className="overflow-x-auto">
         <div className="mt-4 h-96 min-w-[880px] text-black">
           <ResponsiveChoropleth
             data={locationData}
             features={malaysia.features}
             projectionTranslation={[0, 1]}
-            projectionRotation={[-98, 0, 0]}
+            projectionRotation={[isMobile ? -98 : -96, 0, 0]}
             projectionScale={2750}
             margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
             colors={[
@@ -65,6 +83,10 @@ export default function LocationChoropleth() {
           />
         </div>
       </div>
+      <p className="mt-2 chart-footer">
+        {count} responses ({getPercentage(count, TOTAL_RESPONSES, 1)}% of total
+        responses)
+      </p>
     </div>
   );
 }

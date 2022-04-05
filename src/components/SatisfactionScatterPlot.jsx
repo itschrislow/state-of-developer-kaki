@@ -3,8 +3,10 @@ import { ResponsiveScatterPlot } from "@nivo/scatterplot";
 
 import theme from "../lib/nivo";
 import Tooltip from "./Tooltip";
-import { median, average } from "../data/satisfaction";
+import { median, average, count } from "../data/satisfaction";
 import SocialSharing from "./SocialSharing";
+import { getPercentage } from "../lib/helpers";
+import { TOTAL_RESPONSES } from "../lib/constants";
 
 const SatisfactionKeys = {
   Median: "Median",
@@ -24,7 +26,12 @@ export default function SatisfactionScatterPlot() {
     <div id="satisfaction" className="chart">
       <div className="social-share-header">
         <h2 className="title">Satisfaction</h2>
-        <SocialSharing path="/findings/#satisfaction" />
+        <SocialSharing
+          path="/findings#satisfaction"
+          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/satisfaction-${
+            key === SatisfactionKeys.Median ? "median" : "average"
+          }.png`}
+        />
       </div>
       <p>
         Trend: The satisfaction level of developers increases as monthly base
@@ -46,7 +53,7 @@ export default function SatisfactionScatterPlot() {
         <div className="h-[500px] min-w-[500px] text-gray-900">
           <ResponsiveScatterPlot
             data={satisfactionData}
-            margin={{ top: 30, right: 5, bottom: 70, left: 65 }}
+            margin={{ top: 30, right: 5, bottom: 55, left: 65 }}
             xScale={{ type: "linear", min: 1, max: "10" }}
             yScale={{ type: "linear", min: 0, max: "8000" }}
             yFormat=">-.2f"
@@ -80,8 +87,12 @@ export default function SatisfactionScatterPlot() {
           />
         </div>
       </div>
-      <div className="mt-2 w-full flex justify-center">
-        <div className="tabs ml-16">
+      <p className="my-4 chart-footer">
+        {count} responses ({getPercentage(count, TOTAL_RESPONSES, 1)}% of total
+        responses)
+      </p>
+      <div className="w-full flex justify-center">
+        <div className="tabs">
           <button
             onClick={() => setKey(SatisfactionKeys.Median)}
             className={`button ${

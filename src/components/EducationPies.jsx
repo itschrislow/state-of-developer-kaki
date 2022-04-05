@@ -1,15 +1,25 @@
 import { ResponsivePie } from "@nivo/pie";
 
-import { higherEducation, bootcamp } from "../data/education";
+import {
+  higherEducation,
+  bootcamp,
+  higherEducationCount,
+  bootcampCount,
+} from "../data/education";
 import theme from "../lib/nivo";
 import SocialSharing from "./SocialSharing";
+import { getPercentage } from "../lib/helpers";
+import { TOTAL_RESPONSES } from "../lib/constants";
 
 export default function EducationPies() {
   return (
     <div id="education" className="chart">
       <div className="social-share-header">
         <h2 className="title">Education</h2>
-        <SocialSharing path="/findings/#education" />
+        <SocialSharing
+          path="/findings#education"
+          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/education.png`}
+        />
       </div>
       <div className="mb-6 sm:mb-0 flex flex-col sm:flex-row-reverse items-center text-gray-900">
         <p className="mb-4 w-full sm:w-1/2 text-gray-100">
@@ -26,13 +36,18 @@ export default function EducationPies() {
                 innerRadius={0.4}
                 padAngle={0.5}
                 cornerRadius={3}
-                colors={["#e5366f", "#f4a14f", "#f36b55", "#7d1694"]}
+                colors={["#e5366f", "#f4a14f", "#f36b55"]}
                 theme={theme}
                 arcLabelsSkipAngle={15}
                 valueFormat={(value) => `${value}%`}
               />
             </div>
           </div>
+          <p className="mt-4 chart-footer">
+            {higherEducationCount} responses (
+            {getPercentage(higherEducationCount, TOTAL_RESPONSES, 1)}% of total
+            responses)
+          </p>
         </div>
       </div>
       <div className="flex flex-col sm:flex-row items-center text-gray-900">
@@ -40,17 +55,24 @@ export default function EducationPies() {
           Trend: Only 37% of developers who did not have higher education or
           studied an unrelated field joined a bootcamp
         </p>
-        <div className="w-full sm:w-1/2 h-80">
-          <ResponsivePie
-            data={bootcamp}
-            margin={{ top: 30, right: 50, bottom: 20, left: 50 }}
-            innerRadius={0.4}
-            padAngle={0.5}
-            cornerRadius={3}
-            colors={["#e5366f", "#f4a14f"]}
-            theme={theme}
-            valueFormat={(value) => `${value}%`}
-          />
+        <div className="w-full sm:w-1/2 font-medium">
+          <div className="h-80">
+            <ResponsivePie
+              data={bootcamp}
+              margin={{ top: 30, right: 50, bottom: 20, left: 50 }}
+              innerRadius={0.4}
+              padAngle={0.5}
+              cornerRadius={3}
+              colors={["#e5366f", "#f4a14f"]}
+              theme={theme}
+              valueFormat={(value) => `${value}%`}
+            />
+          </div>
+          <p className="mt-4 chart-footer">
+            {bootcampCount} responses (
+            {getPercentage(bootcampCount, TOTAL_RESPONSES, 1)}% of total
+            responses)
+          </p>
         </div>
       </div>
     </div>
