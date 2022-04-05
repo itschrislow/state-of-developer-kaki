@@ -22,7 +22,7 @@ const tableOfContents = [
 ];
 
 export default function Layout() {
-  const { pathname } = useLocation();
+  const { pathname, state } = useLocation();
 
   // MOBILE NAV
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -55,9 +55,11 @@ export default function Layout() {
 
     handlePageview(pathname);
 
-    document
-      .getElementsByClassName("top")[0]
-      .scrollIntoView({ behavior: "smooth" });
+    if (!state) {
+      document
+        .getElementsByClassName("top")[0]
+        .scrollIntoView({ behavior: "smooth" });
+    }
   }, [pathname]);
 
   return (
