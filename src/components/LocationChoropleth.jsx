@@ -30,7 +30,9 @@ export default function LocationChoropleth() {
           imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/location.png`}
         />
       </div>
-      <p>Trend: Close to 80% of developers within the borders of Selangor</p>
+      <p>
+        Trend: Close to 80% of developers reside within the borders of Selangor
+      </p>
       <div className="overflow-x-auto">
         <div className="mt-4 h-96 min-w-[880px] text-black">
           <ResponsiveChoropleth
