@@ -35,6 +35,7 @@ export default function SalaryBars() {
           imageLink={`${
             process.env.REACT_APP_BASE_IMAGE_URL
           }/education-${getImagePath()}.png`}
+          ga4Label={`Salary (${toggleCompare})`}
         />
       </div>
       <div className="mb-4 h-full text-gray-900">

@@ -28,6 +28,7 @@ export default function LocationChoropleth() {
         <SocialSharing
           path="/findings#location"
           imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/location.png`}
+          ga4Label="Location"
         />
       </div>
       <p>

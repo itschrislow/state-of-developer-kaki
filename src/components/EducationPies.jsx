@@ -19,6 +19,7 @@ export default function EducationPies() {
         <SocialSharing
           path="/findings#education"
           imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/education.png`}
+          ga4Label="Education"
         />
       </div>
       <div className="mb-6 sm:mb-0 flex flex-col sm:flex-row-reverse items-center text-gray-900">

@@ -14,6 +14,7 @@ export default function GenderWaffle() {
         <SocialSharing
           path="/findings#gender"
           imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/gender.png`}
+          ga4Label="Gender"
         />
       </div>
       <p>Trend: Only 1 in 10 developers are females/others</p>
