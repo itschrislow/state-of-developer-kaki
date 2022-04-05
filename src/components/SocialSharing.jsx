@@ -14,8 +14,9 @@ import {
   shareToTwitter,
   shareToWhatsapp,
 } from "../lib/helpers";
+import { handleGA4Event } from "../lib/ga4";
 
-export default function SocialSharing({ path, imageLink }) {
+export default function SocialSharing({ path, ga4Label, imageLink }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
@@ -80,11 +81,16 @@ export default function SocialSharing({ path, imageLink }) {
                   {/* FACEBOOK */}
                   <button
                     className="social-share-item"
-                    onClick={() =>
+                    onClick={() => {
+                      handleGA4Event({
+                        action: "Social Sharing",
+                        category: "Facebook",
+                        label: ga4Label,
+                      });
                       shareToFacebook(
                         `${process.env.REACT_APP_BASE_URL}${path}`
-                      )
-                    }
+                      );
+                    }}
                   >
                     <img
                       src={facebook}
@@ -96,11 +102,16 @@ export default function SocialSharing({ path, imageLink }) {
                   {/* WHATSAPP */}
                   <button
                     className="social-share-item"
-                    onClick={() =>
+                    onClick={() => {
+                      handleGA4Event({
+                        category: "Whatsapp",
+                        action: "Social Sharing",
+                        label: ga4Label,
+                      });
                       shareToWhatsapp(
                         `${process.env.REACT_APP_BASE_URL}${path}`
-                      )
-                    }
+                      );
+                    }}
                   >
                     <img
                       src={whatsapp}
@@ -112,9 +123,16 @@ export default function SocialSharing({ path, imageLink }) {
                   {/* TWITTER */}
                   <button
                     className="social-share-item"
-                    onClick={() =>
-                      shareToTwitter(`${process.env.REACT_APP_BASE_URL}${path}`)
-                    }
+                    onClick={() => {
+                      handleGA4Event({
+                        category: "Twitter",
+                        action: "Social Sharing",
+                        label: ga4Label,
+                      });
+                      shareToTwitter(
+                        `${process.env.REACT_APP_BASE_URL}${path}`
+                      );
+                    }}
                   >
                     <img
                       src={twitter}
@@ -127,6 +145,11 @@ export default function SocialSharing({ path, imageLink }) {
                   <button
                     className="social-share-item"
                     onClick={() => {
+                      handleGA4Event({
+                        category: "Copy Link",
+                        action: "Social Sharing",
+                        label: ga4Label,
+                      });
                       copyLinkToClipboard(
                         `${process.env.REACT_APP_BASE_URL}${path}`
                       );
@@ -147,6 +170,13 @@ export default function SocialSharing({ path, imageLink }) {
                       target="_blank"
                       rel="noreferrer"
                       href={imageLink}
+                      onClick={() => {
+                        handleGA4Event({
+                          category: "Download Chart",
+                          action: "Social Sharing",
+                          label: ga4Label,
+                        });
+                      }}
                     >
                       <img src={download} alt="Copy link" className="w-6 h-6" />
                       <h4>Download chart</h4>
