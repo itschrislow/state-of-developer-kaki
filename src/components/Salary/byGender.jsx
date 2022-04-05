@@ -1,6 +1,6 @@
 import { ResponsiveBar } from "@nivo/bar";
 
-import { salaryData } from "../../data/salary";
+import { salaryData } from "../../data/charts/salary";
 import theme from "../../lib/nivo";
 import Tooltip from "../Tooltip";
 

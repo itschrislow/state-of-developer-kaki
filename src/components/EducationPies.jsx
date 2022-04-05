@@ -5,7 +5,7 @@ import {
   bootcamp,
   higherEducationCount,
   bootcampCount,
-} from "../data/education";
+} from "../data/charts/education";
 import theme from "../lib/nivo";
 import SocialSharing from "./SocialSharing";
 import { getPercentage } from "../lib/helpers";

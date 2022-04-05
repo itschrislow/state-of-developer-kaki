@@ -3,7 +3,7 @@ import { ResponsiveScatterPlot } from "@nivo/scatterplot";
 
 import theme from "../lib/nivo";
 import Tooltip from "./Tooltip";
-import { median, average, count } from "../data/satisfaction";
+import { median, average, count } from "../data/charts/satisfaction";
 import SocialSharing from "./SocialSharing";
 import { getPercentage } from "../lib/helpers";
 import { TOTAL_RESPONSES } from "../lib/constants";

@@ -5,9 +5,9 @@ import Tooltip from "./Tooltip";
 import SocialSharing from "./SocialSharing";
 
 import theme from "../lib/nivo";
-import malaysia from "../data/malaysia";
+import malaysia from "../data/geojson/malaysia";
 import { BREAKPOINTS, TOTAL_RESPONSES } from "../lib/constants";
-import { count, locationData } from "../data/location";
+import { count, locationData } from "../data/charts/location";
 import { useWindowSize } from "../hooks/useWindowSize";
 import { getPercentage } from "../lib/helpers";
 

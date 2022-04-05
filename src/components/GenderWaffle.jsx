@@ -1,7 +1,7 @@
 import { ResponsiveWaffle } from "@nivo/waffle";
 
 import theme from "../lib/nivo";
-import { genderData, count } from "../data/gender";
+import { genderData, count } from "../data/charts/gender";
 import SocialSharing from "./SocialSharing";
 import { getPercentage } from "../lib/helpers";
 import { TOTAL_RESPONSES } from "../lib/constants";

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ResponsiveBar } from "@nivo/bar";
 
-import { yoeData, count } from "../data/yoe";
+import { yoeData, count } from "../data/charts/yoe";
 import theme from "../lib/nivo";
 import Tooltip from "./Tooltip";
 import SocialSharing from "./SocialSharing";

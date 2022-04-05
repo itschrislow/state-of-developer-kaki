@@ -5,7 +5,7 @@ import SalaryByEducation from "./byEducation";
 import SalaryByGender from "./byGender";
 import SalaryByYoe from "./byYOE";
 import SalaryBar from "./SalaryBar";
-import { count } from "../../data/salary";
+import { count } from "../../data/charts/salary";
 import { getPercentage } from "../../lib/helpers";
 import { TOTAL_RESPONSES } from "../../lib/constants";
 
