@@ -1,14 +1,17 @@
 import { ResponsiveBar } from "@nivo/bar";
 
-import { salaryData } from "../../data/salary";
-import theme from "../../lib/nivo";
 import Tooltip from "../Tooltip";
+
+import theme from "../../../lib/nivo";
+
+import salaryJson from "../../../data/charts/salary.json";
+const { salaryData } = salaryJson;
 
 export default function SalaryBar() {
   return (
     <div>
       <p className="trend">
-        Trend: 39.5% of developers have a monthly base salary of MYR 5-10k
+        Trend: 39.8% of developers have a monthly base salary of MYR 5-10k
       </p>
       <div className="overflow-x-auto">
         <div className="h-[450px] min-w-[600px] font-medium">

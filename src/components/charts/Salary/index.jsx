@@ -1,13 +1,18 @@
 import { useState } from "react";
-import SocialSharing from "../SocialSharing";
 
-import SalaryByEducation from "./byEducation";
-import SalaryByGender from "./byGender";
 import SalaryByYoe from "./byYOE";
 import SalaryBar from "./SalaryBar";
-import { count } from "../../data/salary";
-import { getPercentage } from "../../lib/helpers";
-import { TOTAL_RESPONSES } from "../../lib/constants";
+import SalaryByGender from "./byGender";
+import SocialSharing from "../../SocialSharing";
+import SalaryByEducation from "./byEducation";
+
+import { getPercentage } from "../../../lib/helpers";
+import { TOTAL_RESPONSES } from "../../../lib/constants";
+
+import education from "../../../data/charts/education.json";
+import salaryJson from "../../../data/charts/salary.json";
+const { count } = salaryJson;
+const { higherEducationCount } = education;
 
 const CompareTo = {
   Percentage: "Percentage",
@@ -32,9 +37,7 @@ export default function SalaryBars() {
         <h2 className="title">Salary</h2>
         <SocialSharing
           path="/findings#salary"
-          imageLink={`${
-            process.env.REACT_APP_BASE_IMAGE_URL
-          }/education-${getImagePath()}.png`}
+          imageLink={`/static/charts/salary-${getImagePath()}.png`}
           ga4Label={`Salary (${toggleCompare})`}
         />
       </div>
@@ -45,8 +48,14 @@ export default function SalaryBars() {
         {toggleCompare === CompareTo.Gender && <SalaryByGender />}
       </div>
       <p className="my-4 chart-footer">
-        {count} responses ({getPercentage(count, TOTAL_RESPONSES, 1)}% of total
-        responses)
+        {toggleCompare === CompareTo.Education ? higherEducationCount : count}{" "}
+        responses (
+        {getPercentage(
+          toggleCompare === CompareTo.Education ? higherEducationCount : count,
+          TOTAL_RESPONSES,
+          1
+        )}
+        % of total responses)
       </p>
       <div className="grid grid-rows-2 sm:grid-rows-1 grid-cols-2 sm:grid-cols-4 text-sm">
         {Object.keys(CompareTo).map((key) => {

@@ -60,7 +60,7 @@ export default function Layout() {
         .getElementsByClassName("top")[0]
         .scrollIntoView({ behavior: "smooth" });
     }
-  }, [pathname]);
+  }, [pathname, state]);
 
   return (
     <div className="h-full bg-black text-gray-100 font-mono">

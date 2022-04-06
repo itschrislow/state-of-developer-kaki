@@ -87,9 +87,7 @@ export default function SocialSharing({ path, ga4Label, imageLink }) {
                         category: "Facebook",
                         label: ga4Label,
                       });
-                      shareToFacebook(
-                        `${process.env.REACT_APP_BASE_URL}${path}`
-                      );
+                      shareToFacebook(`${window.location.origin}${path}`);
                     }}
                   >
                     <img
@@ -108,9 +106,7 @@ export default function SocialSharing({ path, ga4Label, imageLink }) {
                         action: "Social Sharing",
                         label: ga4Label,
                       });
-                      shareToWhatsapp(
-                        `${process.env.REACT_APP_BASE_URL}${path}`
-                      );
+                      shareToWhatsapp(`${window.location.origin}${path}`);
                     }}
                   >
                     <img
@@ -129,9 +125,7 @@ export default function SocialSharing({ path, ga4Label, imageLink }) {
                         action: "Social Sharing",
                         label: ga4Label,
                       });
-                      shareToTwitter(
-                        `${process.env.REACT_APP_BASE_URL}${path}`
-                      );
+                      shareToTwitter(`${window.location.origin}${path}`);
                     }}
                   >
                     <img
@@ -150,9 +144,7 @@ export default function SocialSharing({ path, ga4Label, imageLink }) {
                         action: "Social Sharing",
                         label: ga4Label,
                       });
-                      copyLinkToClipboard(
-                        `${process.env.REACT_APP_BASE_URL}${path}`
-                      );
+                      copyLinkToClipboard(`${window.location.origin}${path}`);
                       setIsCopied(true);
                     }}
                   >

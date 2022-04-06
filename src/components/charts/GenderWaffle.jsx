@@ -1,10 +1,13 @@
 import { ResponsiveWaffle } from "@nivo/waffle";
 
-import theme from "../lib/nivo";
-import { genderData, count } from "../data/gender";
-import SocialSharing from "./SocialSharing";
-import { getPercentage } from "../lib/helpers";
-import { TOTAL_RESPONSES } from "../lib/constants";
+import SocialSharing from "../SocialSharing";
+
+import theme from "../../lib/nivo";
+import { getPercentage } from "../../lib/helpers";
+import { TOTAL_RESPONSES } from "../../lib/constants";
+
+import genderJson from "../../data/charts/gender.json";
+const { genderData, count } = genderJson;
 
 export default function GenderWaffle() {
   return (
@@ -13,7 +16,7 @@ export default function GenderWaffle() {
         <h2 className="title">Gender</h2>
         <SocialSharing
           path="/findings#gender"
-          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/gender.png`}
+          imageLink={`/static/charts/gender.png`}
           ga4Label="Gender"
         />
       </div>

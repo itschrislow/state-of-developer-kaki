@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { ResponsiveScatterPlot } from "@nivo/scatterplot";
 
-import theme from "../lib/nivo";
 import Tooltip from "./Tooltip";
-import { median, average, count } from "../data/satisfaction";
-import SocialSharing from "./SocialSharing";
-import { getPercentage } from "../lib/helpers";
-import { TOTAL_RESPONSES } from "../lib/constants";
+import SocialSharing from "../SocialSharing";
+
+import theme from "../../lib/nivo";
+import { getPercentage } from "../../lib/helpers";
+import { TOTAL_RESPONSES } from "../../lib/constants";
+
+import satisfactionJson from "../../data/charts/satisfaction.json";
+const { median, average, count } = satisfactionJson;
 
 const SatisfactionKeys = {
   Median: "Median",
@@ -28,7 +31,7 @@ export default function SatisfactionScatterPlot() {
         <h2 className="title">Satisfaction</h2>
         <SocialSharing
           path="/findings#satisfaction"
-          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/satisfaction-${
+          imageLink={`/static/charts/satisfaction-${
             key === SatisfactionKeys.Median ? "median" : "average"
           }.png`}
           ga4Label={`Satisfaction (${key})`}
