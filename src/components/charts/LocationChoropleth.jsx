@@ -30,7 +30,7 @@ export default function LocationChoropleth() {
         <h2 className="title">Location</h2>
         <SocialSharing
           path="/findings#location"
-          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/location.png`}
+          imageLink={`/static/charts/location.png`}
         />
       </div>
       <p>

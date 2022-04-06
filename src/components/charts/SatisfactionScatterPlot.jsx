@@ -31,7 +31,7 @@ export default function SatisfactionScatterPlot() {
         <h2 className="title">Satisfaction</h2>
         <SocialSharing
           path="/findings#satisfaction"
-          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/satisfaction-${
+          imageLink={`/static/charts/satisfaction-${
             key === SatisfactionKeys.Median ? "median" : "average"
           }.png`}
         />

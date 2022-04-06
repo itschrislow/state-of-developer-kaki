@@ -17,7 +17,7 @@ export default function EducationPies() {
         <h2 className="title">Education</h2>
         <SocialSharing
           path="/findings#education"
-          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/education.png`}
+          imageLink={`/static/charts/education.png`}
         />
       </div>
       <div className="mb-6 sm:mb-0 flex flex-col sm:flex-row-reverse items-center text-gray-900">

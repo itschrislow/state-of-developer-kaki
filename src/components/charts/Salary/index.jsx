@@ -37,9 +37,7 @@ export default function SalaryBars() {
         <h2 className="title">Salary</h2>
         <SocialSharing
           path="/findings#salary"
-          imageLink={`${
-            process.env.REACT_APP_BASE_IMAGE_URL
-          }/education-${getImagePath()}.png`}
+          imageLink={`/static/charts/salary-${getImagePath()}.png`}
         />
       </div>
       <div className="mb-4 h-full text-gray-900">

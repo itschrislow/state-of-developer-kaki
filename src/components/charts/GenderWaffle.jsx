@@ -16,7 +16,7 @@ export default function GenderWaffle() {
         <h2 className="title">Gender</h2>
         <SocialSharing
           path="/findings#gender"
-          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/gender.png`}
+          imageLink={`/static/charts/gender.png`}
         />
       </div>
       <p>Trend: Only 1 in 10 developers are females/others</p>

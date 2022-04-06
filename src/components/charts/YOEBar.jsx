@@ -25,7 +25,7 @@ export default function YOEBar() {
         <h2 className="title">Years of Experience</h2>
         <SocialSharing
           path="/findings#experience"
-          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/YOE-${
+          imageLink={`/static/charts/YOE-${
             key === YoeKeys.Percentage ? "percentage" : "count"
           }.png`}
         />
