@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+<div align="center">
+  <img src="public/banner.png" alt="logo" />
+</div>
+  
+## 💡 Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a data visualization project of the state of [DeveloperKaki](https://www.facebook.com/groups/developerkaki/), the largest online developer community in Malaysia, based on the data from the [Developer Salary Survey](https://www.facebook.com/groups/developerkaki/permalink/1475965772749331/).
 
-## Available Scripts
+## 🛠 Installation
 
-In the project directory, you can run:
+**Clone repository**
 
-### `yarn start`
+```
+git clone https://github.com/itschrislow/state-of-developer-kaki-2021.git
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Development mode**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+yarn
+yarn start
+```
 
-### `yarn test`
+**Production mode**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+yarn build
+yarn global add serve
+serve -s build
+```
 
-### `yarn build`
+## 📄 Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Data processing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+On server restart, a [script](src/data/scripts.js) will be run to write chart data to be consumed by chart-related components. Chart data is formatted by the [helpers](src/data/helpers.js) file following the format specified in [nivo](https://nivo.rocks/)'s documentation (data vizualization library used).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+See the main project structure below for more information.
 
-### `yarn eject`
+### Main Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Important folders and files in the [`src`](src) directory
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+|- data
+|   |- dataset.json                   # cleaned dataset
+|   |- helpers.js                     # helper functions to format chart data based on nivo documentation
+|   |- scripts.js                     # script to write formatted data into charts folder below on server restart
+|   |- charts
+|       |- [chart1].json
+|       |- ...
+|
+|- components
+|   |- charts                         # contains only chart components
+|       |- [ChartComponentName].jsx
+|       |- ...
+|   |- [ComponentName].jsx            # all other components
+|   |- ...
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Environment Variables
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`REACT_APP_GA_ID` (optional) - Google Analytics ID
