@@ -47,7 +47,7 @@ export default function SocialMedia({ className }) {
         <img src={linkedIn} alt="LinkedIn" className="w-6 h-6" />
       </a>
       <a
-        href="https://github.com/itschrislow"
+        href="https://github.com/itschrislow/state-of-developer-kaki"
         target="_blank"
         rel="noreferrer"
         onClick={() =>
