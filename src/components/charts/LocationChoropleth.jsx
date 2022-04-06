@@ -31,6 +31,7 @@ export default function LocationChoropleth() {
         <SocialSharing
           path="/findings#location"
           imageLink={`/static/charts/location.png`}
+          ga4Label="Location"
         />
       </div>
       <p>

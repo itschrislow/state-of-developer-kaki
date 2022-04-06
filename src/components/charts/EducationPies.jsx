@@ -18,6 +18,7 @@ export default function EducationPies() {
         <SocialSharing
           path="/findings#education"
           imageLink={`/static/charts/education.png`}
+          ga4Label="Education"
         />
       </div>
       <div className="mb-6 sm:mb-0 flex flex-col sm:flex-row-reverse items-center text-gray-900">

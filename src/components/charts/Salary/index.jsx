@@ -38,6 +38,7 @@ export default function SalaryBars() {
         <SocialSharing
           path="/findings#salary"
           imageLink={`/static/charts/salary-${getImagePath()}.png`}
+          ga4Label={`Salary (${toggleCompare})`}
         />
       </div>
       <div className="mb-4 h-full text-gray-900">

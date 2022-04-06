@@ -55,10 +55,11 @@ export default function Layout() {
 
     handlePageview(pathname);
 
-    if (!state?.id)
+    if (!state) {
       document
         .getElementsByClassName("top")[0]
         .scrollIntoView({ behavior: "smooth" });
+    }
   }, [pathname, state]);
 
   return (

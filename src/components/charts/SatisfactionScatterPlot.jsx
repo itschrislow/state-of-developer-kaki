@@ -34,6 +34,7 @@ export default function SatisfactionScatterPlot() {
           imageLink={`/static/charts/satisfaction-${
             key === SatisfactionKeys.Median ? "median" : "average"
           }.png`}
+          ga4Label={`Satisfaction (${key})`}
         />
       </div>
       <p>

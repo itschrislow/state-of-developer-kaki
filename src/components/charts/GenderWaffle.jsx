@@ -17,6 +17,7 @@ export default function GenderWaffle() {
         <SocialSharing
           path="/findings#gender"
           imageLink={`/static/charts/gender.png`}
+          ga4Label="Gender"
         />
       </div>
       <p>Trend: Only 1 in 10 developers are females/others</p>

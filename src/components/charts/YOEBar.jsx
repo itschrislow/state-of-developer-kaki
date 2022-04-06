@@ -12,8 +12,8 @@ import yoeJson from "../../data/charts/yoe.json";
 const { yoeData, count } = yoeJson;
 
 const YoeKeys = {
-  Count: "count",
-  Percentage: "percentage",
+  Count: "Count",
+  Percentage: "Percentage",
 };
 
 export default function YOEBar() {
@@ -28,6 +28,7 @@ export default function YOEBar() {
           imageLink={`/static/charts/YOE-${
             key === YoeKeys.Percentage ? "percentage" : "count"
           }.png`}
+          ga4Label={`YOE (${key})`}
         />
       </div>
       <p>
@@ -38,7 +39,7 @@ export default function YOEBar() {
         <div className="mt-4 h-96 min-w-[600px] text-gray-900 font-mono">
           <ResponsiveBar
             data={yoeData}
-            keys={[key]}
+            keys={[key.toLowerCase()]}
             indexBy="yoe"
             margin={{ top: 40, right: 0, bottom: 25, left: 30 }}
             padding={0.4}

@@ -41,7 +41,7 @@
 
 /* Used in SocialSharing.jsx */
 .social-share-item {
-  @apply px-4 py-3 lg:py-4 flex items-center gap-4 hover:bg-white hover:bg-opacity-10;
+  @apply px-4 py-3 lg:py-4 flex items-center gap-4 hover:bg-white hover:bg-opacity-10 focus:outline-none focus:ring-0;
 }
 
 .chart-footer {
