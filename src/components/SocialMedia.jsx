@@ -19,7 +19,7 @@ export default function SocialMedia({ className }) {
       label: "Copy Link",
     });
     setIsCopied(true);
-    copyLinkToClipboard(process.env.REACT_APP_BASE_URL);
+    copyLinkToClipboard(window.location.origin);
   };
 
   useEffect(() => {
