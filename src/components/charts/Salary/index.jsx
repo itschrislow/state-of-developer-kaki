@@ -3,13 +3,13 @@ import { useState } from "react";
 import SalaryByYoe from "./byYOE";
 import SalaryBar from "./SalaryBar";
 import SalaryByGender from "./byGender";
-import SocialSharing from "../SocialSharing";
+import SocialSharing from "../../SocialSharing";
 import SalaryByEducation from "./byEducation";
 
-import { getPercentage } from "../../lib/helpers";
-import { TOTAL_RESPONSES } from "../../lib/constants";
+import { getPercentage } from "../../../lib/helpers";
+import { TOTAL_RESPONSES } from "../../../lib/constants";
 
-import salaryJson from "../../data/charts/salary.json";
+import salaryJson from "../../../data/charts/salary.json";
 const { count } = salaryJson;
 
 const CompareTo = {

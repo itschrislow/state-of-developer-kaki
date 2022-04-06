@@ -1,12 +1,12 @@
 import { ResponsivePie } from "@nivo/pie";
 
-import SocialSharing from "./SocialSharing";
+import SocialSharing from "../SocialSharing";
 
-import theme from "../lib/nivo";
-import { getPercentage } from "../lib/helpers";
-import { TOTAL_RESPONSES } from "../lib/constants";
+import theme from "../../lib/nivo";
+import { getPercentage } from "../../lib/helpers";
+import { TOTAL_RESPONSES } from "../../lib/constants";
 
-import educationJson from "../data/charts/education.json";
+import educationJson from "../../data/charts/education.json";
 const { higherEducation, bootcamp, higherEducationCount, bootcampCount } =
   educationJson;
 

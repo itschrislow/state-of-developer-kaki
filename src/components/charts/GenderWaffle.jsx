@@ -1,12 +1,12 @@
 import { ResponsiveWaffle } from "@nivo/waffle";
 
-import SocialSharing from "./SocialSharing";
+import SocialSharing from "../SocialSharing";
 
-import theme from "../lib/nivo";
-import { getPercentage } from "../lib/helpers";
-import { TOTAL_RESPONSES } from "../lib/constants";
+import theme from "../../lib/nivo";
+import { getPercentage } from "../../lib/helpers";
+import { TOTAL_RESPONSES } from "../../lib/constants";
 
-import genderJson from "../data/charts/gender.json";
+import genderJson from "../../data/charts/gender.json";
 const { genderData, count } = genderJson;
 
 export default function GenderWaffle() {

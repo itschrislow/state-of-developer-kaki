@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { ResponsiveScatterPlot } from "@nivo/scatterplot";
 
 import Tooltip from "./Tooltip";
-import SocialSharing from "./SocialSharing";
+import SocialSharing from "../SocialSharing";
 
-import theme from "../lib/nivo";
-import { getPercentage } from "../lib/helpers";
-import { TOTAL_RESPONSES } from "../lib/constants";
+import theme from "../../lib/nivo";
+import { getPercentage } from "../../lib/helpers";
+import { TOTAL_RESPONSES } from "../../lib/constants";
 
-import satisfactionJson from "../data/charts/satisfaction.json";
+import satisfactionJson from "../../data/charts/satisfaction.json";
 const { median, average, count } = satisfactionJson;
 
 const SatisfactionKeys = {

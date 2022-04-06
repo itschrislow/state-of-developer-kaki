@@ -4,7 +4,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-const dataset = require("./cleanedDataset.json");
+const dataset = require("./dataset.json");
 const {
   getLocation,
   getGender,

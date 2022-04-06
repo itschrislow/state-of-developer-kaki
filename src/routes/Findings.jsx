@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import GenderWaffle from "../components/GenderWaffle";
-import YOEBar from "../components/YOEBar";
-import EducationPies from "../components/EducationPies";
-import SalaryBars from "../components/Salary";
-import SatisfactionScatterPlot from "../components/SatisfactionScatterPlot";
-import LocationChoropleth from "../components/LocationChoropleth";
+import GenderWaffle from "../components/charts/GenderWaffle";
+import YOEBar from "../components/charts/YOEBar";
+import EducationPies from "../components/charts/EducationPies";
+import SalaryBars from "../components/charts/Salary";
+import SatisfactionScatterPlot from "../components/charts/SatisfactionScatterPlot";
+import LocationChoropleth from "../components/charts/LocationChoropleth";
 
 export default function Findings() {
   const { state } = useLocation();
