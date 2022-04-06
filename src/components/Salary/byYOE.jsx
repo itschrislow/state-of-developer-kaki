@@ -1,8 +1,11 @@
 import { ResponsiveBar } from "@nivo/bar";
 
-import { salaryData } from "../../data/salary";
-import theme from "../../lib/nivo";
 import Tooltip from "../Tooltip";
+
+import theme from "../../lib/nivo";
+
+import salaryJson from "../../data/charts/salary.json";
+const { salaryData } = salaryJson;
 
 export default function SalaryByYoe() {
   return (

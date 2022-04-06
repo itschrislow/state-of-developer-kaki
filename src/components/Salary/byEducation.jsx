@@ -1,8 +1,11 @@
 import { ResponsiveBar } from "@nivo/bar";
 
-import { salaryData } from "../../data/salary";
-import theme from "../../lib/nivo";
 import Tooltip from "../Tooltip";
+
+import theme from "../../lib/nivo";
+
+import salaryJson from "../../data/charts/salary.json";
+const { salaryData } = salaryJson;
 
 export default function SalaryByEducation() {
   return (
@@ -16,7 +19,7 @@ export default function SalaryByEducation() {
           <ResponsiveBar
             data={salaryData.slice().reverse()}
             layout="horizontal"
-            keys={["Yes, related field", "Yes, unrelated field", "No", "Blank"]}
+            keys={["Yes, related field", "Yes, unrelated field", "No"]}
             indexBy="salary"
             margin={{ top: 20, right: 0, bottom: 0, left: 85 }}
             padding={0.3}

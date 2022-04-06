@@ -5,11 +5,14 @@ import Tooltip from "./Tooltip";
 import SocialSharing from "./SocialSharing";
 
 import theme from "../lib/nivo";
-import malaysia from "../data/malaysia";
-import { BREAKPOINTS, TOTAL_RESPONSES } from "../lib/constants";
-import { count, locationData } from "../data/location";
-import { useWindowSize } from "../hooks/useWindowSize";
 import { getPercentage } from "../lib/helpers";
+import { BREAKPOINTS, TOTAL_RESPONSES } from "../lib/constants";
+
+import { useWindowSize } from "../hooks/useWindowSize";
+
+import malaysia from "../data/geojson/malaysia";
+import locationJson from "../data/charts/location.json";
+const { count, locationData } = locationJson;
 
 export default function LocationChoropleth() {
   const { width } = useWindowSize();

@@ -1,13 +1,16 @@
 import { useState } from "react";
-import SocialSharing from "../SocialSharing";
 
-import SalaryByEducation from "./byEducation";
-import SalaryByGender from "./byGender";
 import SalaryByYoe from "./byYOE";
 import SalaryBar from "./SalaryBar";
-import { count } from "../../data/salary";
+import SalaryByGender from "./byGender";
+import SocialSharing from "../SocialSharing";
+import SalaryByEducation from "./byEducation";
+
 import { getPercentage } from "../../lib/helpers";
 import { TOTAL_RESPONSES } from "../../lib/constants";
+
+import salaryJson from "../../data/charts/salary.json";
+const { count } = salaryJson;
 
 const CompareTo = {
   Percentage: "Percentage",
