@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 import { ResponsiveChoropleth } from "@nivo/geo";
 
 import Tooltip from "./Tooltip";
-import SocialSharing from "./SocialSharing";
+import SocialSharing from "../SocialSharing";
 
-import theme from "../lib/nivo";
-import { getPercentage } from "../lib/helpers";
-import { BREAKPOINTS, TOTAL_RESPONSES } from "../lib/constants";
+import theme from "../../lib/nivo";
+import { getPercentage } from "../../lib/helpers";
+import { BREAKPOINTS, TOTAL_RESPONSES } from "../../lib/constants";
 
-import { useWindowSize } from "../hooks/useWindowSize";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
-import malaysia from "../data/geojson/malaysia";
-import locationJson from "../data/charts/location.json";
+import malaysia from "../../data/geojson/malaysia";
+import locationJson from "../../data/charts/location.json";
 const { count, locationData } = locationJson;
 
 export default function LocationChoropleth() {
@@ -30,7 +30,7 @@ export default function LocationChoropleth() {
         <h2 className="title">Location</h2>
         <SocialSharing
           path="/findings#location"
-          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/location.png`}
+          imageLink={`/static/charts/location.png`}
         />
       </div>
       <p>

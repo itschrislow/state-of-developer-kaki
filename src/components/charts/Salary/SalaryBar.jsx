@@ -2,9 +2,9 @@ import { ResponsiveBar } from "@nivo/bar";
 
 import Tooltip from "../Tooltip";
 
-import theme from "../../lib/nivo";
+import theme from "../../../lib/nivo";
 
-import salaryJson from "../../data/charts/salary.json";
+import salaryJson from "../../../data/charts/salary.json";
 const { salaryData } = salaryJson;
 
 export default function SalaryBar() {

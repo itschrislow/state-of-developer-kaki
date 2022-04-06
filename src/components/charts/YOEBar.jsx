@@ -2,13 +2,13 @@ import { useState } from "react";
 import { ResponsiveBar } from "@nivo/bar";
 
 import Tooltip from "./Tooltip";
-import SocialSharing from "./SocialSharing";
+import SocialSharing from "../SocialSharing";
 
-import theme from "../lib/nivo";
-import { getPercentage } from "../lib/helpers";
-import { TOTAL_RESPONSES } from "../lib/constants";
+import theme from "../../lib/nivo";
+import { getPercentage } from "../../lib/helpers";
+import { TOTAL_RESPONSES } from "../../lib/constants";
 
-import yoeJson from "../data/charts/yoe.json";
+import yoeJson from "../../data/charts/yoe.json";
 const { yoeData, count } = yoeJson;
 
 const YoeKeys = {
@@ -25,7 +25,7 @@ export default function YOEBar() {
         <h2 className="title">Years of Experience</h2>
         <SocialSharing
           path="/findings#experience"
-          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/YOE-${
+          imageLink={`/static/charts/YOE-${
             key === YoeKeys.Percentage ? "percentage" : "count"
           }.png`}
         />

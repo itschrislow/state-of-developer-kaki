@@ -1,12 +1,12 @@
 import { ResponsiveWaffle } from "@nivo/waffle";
 
-import SocialSharing from "./SocialSharing";
+import SocialSharing from "../SocialSharing";
 
-import theme from "../lib/nivo";
-import { getPercentage } from "../lib/helpers";
-import { TOTAL_RESPONSES } from "../lib/constants";
+import theme from "../../lib/nivo";
+import { getPercentage } from "../../lib/helpers";
+import { TOTAL_RESPONSES } from "../../lib/constants";
 
-import genderJson from "../data/charts/gender.json";
+import genderJson from "../../data/charts/gender.json";
 const { genderData, count } = genderJson;
 
 export default function GenderWaffle() {
@@ -16,7 +16,7 @@ export default function GenderWaffle() {
         <h2 className="title">Gender</h2>
         <SocialSharing
           path="/findings#gender"
-          imageLink={`${process.env.REACT_APP_BASE_IMAGE_URL}/gender.png`}
+          imageLink={`/static/charts/gender.png`}
         />
       </div>
       <p>Trend: Only 1 in 10 developers are females/others</p>
