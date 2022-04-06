@@ -1,6 +1,11 @@
 {
-  "name": "dk",
+  "name": "state-of-developer-kaki",
   "version": "0.1.0",
+  "description": "Data visualization of the state of DeveloperKaki",
+  "author": {
+    "name": "Chris Low",
+    "url": "https://itschrislow.com/"
+  },
   "private": true,
   "scripts": {
     "prestart": "NODE_ENV=development node ./src/data/scripts.js",
