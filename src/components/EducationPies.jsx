@@ -1,15 +1,14 @@
 import { ResponsivePie } from "@nivo/pie";
 
-import {
-  higherEducation,
-  bootcamp,
-  higherEducationCount,
-  bootcampCount,
-} from "../data/charts/education";
-import theme from "../lib/nivo";
 import SocialSharing from "./SocialSharing";
+
+import theme from "../lib/nivo";
 import { getPercentage } from "../lib/helpers";
 import { TOTAL_RESPONSES } from "../lib/constants";
+
+import educationJson from "../data/charts/education.json";
+const { higherEducation, bootcamp, higherEducationCount, bootcampCount } =
+  educationJson;
 
 export default function EducationPies() {
   return (
@@ -38,7 +37,7 @@ export default function EducationPies() {
                 cornerRadius={3}
                 colors={["#e5366f", "#f4a14f", "#f36b55"]}
                 theme={theme}
-                arcLabelsSkipAngle={15}
+                arcLabelsSkipAngle={12}
                 valueFormat={(value) => `${value}%`}
               />
             </div>
@@ -52,13 +51,14 @@ export default function EducationPies() {
       </div>
       <div className="flex flex-col sm:flex-row items-center text-gray-900">
         <p className="mb-4 w-full sm:w-1/2 text-gray-100">
-          Trend: Only 37% of developers who did not have higher education or
-          studied an unrelated field joined a bootcamp
+          Trend: Of the developers who did not have higher education or studied
+          an unrelated field, {"<"}50% joined a bootcamp
         </p>
         <div className="w-full sm:w-1/2 font-medium">
           <div className="h-80">
             <ResponsivePie
               data={bootcamp}
+              value="percentage"
               margin={{ top: 30, right: 50, bottom: 20, left: 50 }}
               innerRadius={0.4}
               padAngle={0.5}
