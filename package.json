@@ -5,7 +5,7 @@
   "scripts": {
     "prestart": "NODE_ENV=development node ./src/data/scripts.js",
     "start": "react-scripts start",
-    "prebuild": "NODE_ENV=development node ./src/data/scripts.js",
+    "prebuild": "NODE_ENV=production node ./src/data/scripts.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
