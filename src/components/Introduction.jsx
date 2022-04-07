@@ -19,7 +19,8 @@ export default function Introduction() {
         >
           <span className="text-gradient">news</span>
         </a>{" "}
-        of Malaysian increasing the minimum wage to MYR 1500/month, the{" "}
+        of Malaysia's government increasing the minimum wage to MYR 1500/month,
+        the{" "}
         <a
           target="_blank"
           rel="noreferrer"
