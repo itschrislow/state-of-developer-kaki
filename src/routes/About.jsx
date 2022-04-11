@@ -44,7 +44,17 @@ export default function About() {
         >
           <span className="text-gradient">Chris Low</span>
         </a>
-        .
+        . Public repository available{" "}
+        <span className="text-gradient">
+          <a
+            href="https://github.com/itschrislow/state-of-developer-kaki"
+            target="_blank"
+            rel="noreferrer"
+          >
+            here
+          </a>
+        </span>{" "}
+        on Github.
       </p>
 
       <br />
