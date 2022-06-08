@@ -7,7 +7,7 @@ export default function Introduction() {
       <h2 className="mb-4 title">Introduction</h2>
       <p>
         Balancing the scales of being underpaid or overpaid requires huge
-        deliberation. Oftentimes, leading to a heated discussions.
+        deliberation. Oftentimes, leading to heated discussions.
       </p>
       <br />
       <p>
