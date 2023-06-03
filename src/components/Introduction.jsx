@@ -11,24 +11,9 @@ export default function Introduction() {
       </p>
       <br />
       <p>
-        With the recent{" "}
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.theedgemarkets.com/article/new-minimum-wage-rm1500-month-may-1-%E2%80%94-pm"
-        >
-          <span className="text-gradient">news</span>
-        </a>{" "}
-        of Malaysia's government increasing the minimum wage to MYR 1500/month,
-        the{" "}
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.instagram.com/malaysianpaygap/"
-        >
-          <span className="text-gradient">@malaysianpaygap</span>{" "}
-        </a>{" "}
-        Instagram account and the ongoing debates in{" "}
+        With the recent news of Malaysia's government increasing the minimum
+        wage to MYR 1500/month, the @malaysianpaygap Instagram account and the
+        ongoing debates in{" "}
         <a
           target="_blank"
           rel="noreferrer"
@@ -49,7 +34,17 @@ export default function Introduction() {
         demographics, geography, education and experience.
       </p>
       <br />
-      <p>Let's discover the state of DeveloperKaki in 2021!</p>
+      <p>
+        Let's discover the state of DeveloperKaki in 2021 or see the results for{" "}
+        <a
+          href="https://www.stateofdevkaki.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span className="text-gradient">State of DevKaki 2022</span>
+        </a>{" "}
+        instead
+      </p>
       <br />
       <div className="flex gap-4">
         <div className="h-[60px] w-[60px] p-1 rounded-full border border-dashed">
